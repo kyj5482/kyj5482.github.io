@@ -12,13 +12,14 @@
 - [ ] **LinkedIn 헤드라인 결정**: 에이전트가 초안 3개 제시 → 본인 선택
   - 예시 A: `Platform Engineer (20+ yrs, Samsung→Hyundai→Kia) | Building with AI Agents | Solo Startup in Public`
   - 예시 B: `Vehicle Data Platform @ Kia US | 20 yrs building 0→1 platforms | AI-native solo builder`
-- [ ] **뉴스레터 플랫폼 선택 (= 이메일 리스트 개설)**: 한국어 독자 중심이면 스티비 또는 Maily, 글로벌 확장 고려하면 Substack. 권장: **Maily(무료, 한국어 친화)로 시작 → 500명 넘으면 재평가**. 선정 즉시 구독 링크를 블로그·swim.capsule 사이트에 배치 (에이전트 작업) — 이메일 리스트가 유일한 소유 오디언스 자산
+- [x] **뉴스레터 플랫폼 선택**: ✅ **Maily 확정** (2026-07). 블로그 Newsletter 탭 + 이메일 구독 CTA 배치 완료
+- [ ] **Maily 계정 개설**: maily.so 가입 → 구독 페이지 URL을 전달하면 에이전트가 Newsletter 탭·swim.capsule 사이트에 연결. 그전까지는 이메일("구독" 회신)로 리스트 수집
 - [ ] **X(트위터) 유지 여부 결정**: _config.yml에 계정 연결돼 있음. 운영 안 할 거면 링크 정리
 
 ## Phase 1 진입 전 (~2026.12)
 
-- [ ] **YouTube 채널 개설** (쇼츠용): 채널명 결정 — B트랙 중심이므로 수영 관련 이름 권장 (출시 1순위 앱 이름과 통일하면 최적)
-- [ ] **앱 출시 1순위 확정**: SplitLane(swim.meet.timer) vs SwimVault(swim.meet.portfolio) — 현재 유력은 로드맵·수익모델을 갖춘 SplitLane. 확정 시 02 로드맵의 Phase 1~3 일정을 해당 레포 ROADMAP과 동기화 (에이전트 작업)
+- [ ] **YouTube 채널 개설** (쇼츠용): 채널명 결정 — 앱과 통일해 **SplitLane** 계열 이름 권장
+- [x] **앱 출시 1순위 확정**: ✅ **SplitLane** (2026-07). 02 로드맵 Phase 1~3이 SplitLane ROADMAP과 동기화됨
 - [ ] **개인 도메인 구매 여부**: kyj5482.github.io 유지 vs 커스텀 도메인 (예: 이름.dev). 브랜딩상 커스텀 권장, 급하지 않음
 - [ ] **Google Analytics 연결**: _config.yml의 `google_analytics.id` 비어 있음 — GA4 생성 후 ID만 주면 에이전트가 반영
 - [x] **아이들 기록 데이터 정리**: ✅ 이미 축적 중 — swim.meets(`data/`)와 swim.capsule(`data/timeline.json`)이 대회별 기록·아카이브를 보유. 앱 시드 데이터로 재사용

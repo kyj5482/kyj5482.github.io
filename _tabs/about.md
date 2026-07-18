@@ -1,7 +1,7 @@
 ---
 # the default layout is 'page'
 icon: fas fa-info-circle
-order: 4
+order: 1
 ---
 
 ## 좋아하는 것으로 시작하는 스타트업

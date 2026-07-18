@@ -19,7 +19,8 @@ title: 1인 스타트업 # the main title
 tagline: 좋아하는 것으로 시작하는 스타트업 # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  1인 스타트업을 꿈꾸는 개발자
+  생각은 내가, 완성은 AI가 — 20년차 플랫폼 개발자의 1인 스타트업 실험.
+  AI 에이전트로 만드는 수영 앱과 한·미 수영 선수 부모의 기록.
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -73,7 +74,8 @@ theme_mode: # [light|dark]
 #img_cdn: "https://kyj5482.github.io"
 
 # the avatar on sidebar, support local or CORS resources
-avatar: "/commons/avatar.jpg"
+# TODO: 프로필 사진 촬영 후 /assets/img/avatar.jpg 로 교체 (_branding/05-checklist.md)
+avatar: ""
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
