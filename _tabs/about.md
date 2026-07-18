@@ -30,6 +30,15 @@ AI 에이전트 기반 서비스를 만들고 있습니다.
 - **Swim Parent** — 한국과 미국, 두 나라에서 수영 선수 아이들을 키운 부모의 실전 기록
 - **Startup** — 1인 스타트업 전략과 분기별 회고
 
+### 만들고 있는 것들
+
+모든 프로젝트는 GitHub에서 공개로 만들어지고 있습니다. 더 깊이 보고 싶다면 언제든 코드와 기록으로 직접 확인할 수 있습니다.
+
+- [swim.meets](https://github.com/kyj5482/swim.meets) — 대회 출전표(psych sheet)에서 관심 선수의 기록·레인·표준기록 통과 여부를 자동 추출하는 도구
+- [swim.capsule](https://github.com/kyj5482/swim.capsule) — 두 선수의 대회 기록·기사·영상을 원본 그대로 보관하는 수영 타임캡슐 ([사이트](https://kyj5482.github.io/swim.capsule/))
+- [SwimVault](https://github.com/kyj5482/swim.meet.portfolio) — 결과지 사진 한 장으로 만드는 평생 수영 기록부
+- [SplitLane](https://github.com/kyj5482/swim.meet.timer) — 수영 타이머와 기록에서 시작해 AI 코치 분석으로 성장하는 앱
+
 ### 함께하기
 
 - GitHub: [github.com/kyj5482](https://github.com/kyj5482)
