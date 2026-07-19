@@ -29,7 +29,7 @@ layout: null
 
     /* header */
     header{position:sticky;top:0;z-index:50;background:rgba(10,14,20,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;gap:20px;height:60px}
+    .nav{display:flex;align-items:center;gap:14px;height:60px}
     .logo{font-weight:800;font-size:1.05rem;letter-spacing:-.02em;white-space:nowrap}
     .logo em{font-style:normal;color:var(--accent)}
     .nav-links{display:flex;gap:16px;margin-left:auto;font-size:.9rem;color:var(--sub);overflow-x:auto;scrollbar-width:none}
@@ -40,6 +40,10 @@ layout: null
     .btn:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(56,189,248,.35)}
     .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
     .btn.ghost:hover{border-color:var(--accent);box-shadow:none}
+    .lang{display:flex;gap:2px;border:1px solid var(--line);border-radius:999px;padding:3px;flex-shrink:0}
+    .lang button{background:none;border:0;color:var(--sub);font-size:.72rem;font-weight:700;padding:4px 8px;border-radius:999px;cursor:pointer;font-family:inherit}
+    .lang button.on{background:var(--accent);color:#081018}
+    .lang button:hover:not(.on){color:var(--txt)}
 
     /* hero */
     .hero{position:relative;padding:72px 0 40px;overflow:hidden}
@@ -100,6 +104,7 @@ layout: null
     .news h2{font-size:clamp(1.3rem,3vw,1.7rem);font-weight:800;letter-spacing:-.02em}
     .news p{color:var(--sub);max-width:560px;margin:10px auto 22px}
     .news small{display:block;color:var(--sub);margin-top:14px;font-size:.78rem}
+    .news small a{text-decoration:underline}
 
     footer{border-top:1px solid var(--line);padding:30px 0 44px;color:var(--sub);font-size:.85rem}
     .foot{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
@@ -111,58 +116,80 @@ layout: null
 
 <header>
   <div class="wrap nav">
-    <a class="logo" href="/">1인 스타트업<em>.</em></a>
+    <a class="logo" href="/"><span data-en="Solo Startup" data-es="Solo Startup" data-zh="一人创业">1인 스타트업</span><em>.</em></a>
     <nav class="nav-links">
-      <a href="#now">콘텐츠</a>
-      <a href="#story">스토리</a>
-      <a href="#history">걸어온 길</a>
-      <a href="#roadmap">앞으로의 일정</a>
-      <a href="/archives/">블로그</a>
+      <a href="#now" data-en="Content" data-es="Contenido" data-zh="内容">콘텐츠</a>
+      <a href="#story" data-en="Story" data-es="Historia" data-zh="故事">스토리</a>
+      <a href="#history" data-en="Journey" data-es="Trayectoria" data-zh="成长历程">걸어온 길</a>
+      <a href="#roadmap" data-en="Roadmap" data-es="Calendario" data-zh="发布计划">앞으로의 일정</a>
+      <a href="/archives/" data-en="Blog" data-es="Blog" data-zh="博客">블로그</a>
     </nav>
-    <a class="btn" href="#newsletter">뉴스레터 구독</a>
+    <div class="lang" role="group" aria-label="Language">
+      <button data-lang="ko">KO</button><button data-lang="en">EN</button><button data-lang="es">ES</button><button data-lang="zh">中</button>
+    </div>
+    <a class="btn" href="#newsletter" data-en="Subscribe" data-es="Suscríbete" data-zh="订阅">뉴스레터 구독</a>
   </div>
 </header>
 
 <div class="hero">
   <div class="wrap">
     <div class="eyebrow">SOLO STARTUP · BUILD IN PUBLIC</div>
-    <h1>생각은 내가,<br>완성은 AI가.</h1>
-    <p class="lead">
+    <h1 data-en="I think.&lt;br&gt;AI builds." data-es="Yo pienso.&lt;br&gt;La IA construye." data-zh="我思考，&lt;br&gt;AI完成。">생각은 내가,<br>완성은 AI가.</h1>
+    <p class="lead"
+       data-en="A platform engineer with 20+ years at Samsung, Hyundai and Kia — and a dad raising two competitive swimmers in Korea and the U.S. I'm building a solo startup with AI agents — articles, videos and apps — all in public."
+       data-es="Ingeniero de plataformas con más de 20 años en Samsung, Hyundai y Kia — y padre de dos nadadores de competición en Corea y EE. UU. Construyo una startup en solitario con agentes de IA — artículos, vídeos y apps — todo en público."
+       data-zh="在三星、现代、起亚拥有20多年经验的平台工程师，同时是在韩国和美国养育两位竞技游泳选手的爸爸。我正与AI智能体一起打造一人创业公司——文章、视频、应用，全程公开。">
       20년차 플랫폼 개발자이자 한국과 미국에서 수영 선수 두 아이를 키우는 아빠입니다.
       AI 에이전트와 함께 글·영상·앱을 만드는 1인 스타트업 실험 — 그 전 과정을 여기서 공개합니다.
     </p>
     <div class="cta">
-      <a class="btn" href="https://maily.so/solostartup" target="_blank" rel="noopener">새 콘텐츠를 메일로 받기</a>
-      <a class="btn ghost" href="#story">스토리 먼저 보기</a>
+      <a class="btn" href="https://maily.so/solostartup" target="_blank" rel="noopener" data-en="Get new content by email" data-es="Recibe lo nuevo por correo" data-zh="邮件订阅新内容">새 콘텐츠를 메일로 받기</a>
+      <a class="btn ghost" href="#story" data-en="See the story first" data-es="Ver la historia" data-zh="先看故事">스토리 먼저 보기</a>
     </div>
     <div class="stats">
-      <div class="stat"><b>20+년</b><span>삼성·현대차·기아 플랫폼 개발</span></div>
-      <div class="stat"><b>4개국</b><span>커넥티드카 플랫폼 글로벌 런칭</span></div>
-      <div class="stat"><b>앱 4개</b><span>수영 앱 스택 Build in Public</span></div>
-      <div class="stat"><b>2개국 메달</b><span>한·미 수영 선수 두 아이와 함께</span></div>
+      <div class="stat"><b data-en="20+ yrs" data-es="+20 años" data-zh="20+年">20+년</b><span data-en="Platforms at Samsung · Hyundai · Kia" data-es="Plataformas en Samsung · Hyundai · Kia" data-zh="三星·现代·起亚平台开发">삼성·현대차·기아 플랫폼 개발</span></div>
+      <div class="stat"><b data-en="4 countries" data-es="4 países" data-zh="4个国家">4개국</b><span data-en="Connected-car platform global launches" data-es="Lanzamientos globales de coche conectado" data-zh="互联汽车平台全球上线">커넥티드카 플랫폼 글로벌 런칭</span></div>
+      <div class="stat"><b data-en="4 apps" data-es="4 apps" data-zh="4款应用">앱 4개</b><span data-en="Swim app stack, built in public" data-es="Apps de natación, en público" data-zh="游泳应用栈公开开发">수영 앱 스택 Build in Public</span></div>
+      <div class="stat"><b data-en="Medals, 2 nations" data-es="Medallas, 2 países" data-zh="两国奖牌">2개국 메달</b><span data-en="With two swimmers, in Korea &amp; the U.S." data-es="Con dos nadadores en Corea y EE. UU." data-zh="与两位游泳选手孩子同行">한·미 수영 선수 두 아이와 함께</span></div>
     </div>
   </div>
 </div>
 
 <section id="now">
   <div class="wrap">
-    <div class="sec-head"><h2>🎬 지금 바로 볼 수 있어요</h2><a class="more" href="/archives/">전체 보기 →</a></div>
+    <div class="sec-head"><h2 data-en="🎬 Watch right now" data-es="🎬 Disponible ahora" data-zh="🎬 现在就能看">🎬 지금 바로 볼 수 있어요</h2><a class="more" href="/archives/" data-en="View all →" data-es="Ver todo →" data-zh="查看全部 →">전체 보기 →</a></div>
     <div class="rail">
       <a class="card" href="/posts/%ED%8D%BC%EC%8A%A4%EB%84%90-%EB%B8%8C%EB%9E%9C%EB%94%A9%EC%9D%84-%EC%8B%9C%EC%9E%91%ED%95%A9%EB%8B%88%EB%8B%A4/">
         <div class="thumb now">🚀<span class="badge live">NEW</span></div>
-        <div class="card-body"><h3>생각은 내가, 완성은 AI가 — 시작 선언</h3><p>2년 멈췄던 블로그를 다시 켠 이유, 그리고 앞으로의 계획.</p><span class="card-date">공개됨 · 2026.07.18</span></div>
+        <div class="card-body">
+          <h3 data-en="I think, AI builds — the announcement" data-es="Yo pienso, la IA construye — la declaración" data-zh="我思考，AI完成——开篇宣言">생각은 내가, 완성은 AI가 — 시작 선언</h3>
+          <p data-en="Why I restarted this blog after two years, and what's next." data-es="Por qué reinicié este blog tras dos años y qué viene." data-zh="为什么重启停更两年的博客，以及未来计划。">2년 멈췄던 블로그를 다시 켠 이유, 그리고 앞으로의 계획.</p>
+          <span class="card-date" data-en="Published · 2026.07.18" data-es="Publicado · 2026.07.18" data-zh="已发布 · 2026.07.18">공개됨 · 2026.07.18</span>
+        </div>
       </a>
       <a class="card" href="https://kyj5482.github.io/swim.capsule/">
         <div class="thumb swim">🌊<span class="badge live">LIVE</span></div>
-        <div class="card-body"><h3>SWIM CAPSULE — 두 선수의 타임캡슐</h3><p>과천에서 어바인까지, 대회 기록·기사·영상을 원본 그대로 보관하는 아카이브.</p><span class="card-date">운영 중 · 한/영</span></div>
+        <div class="card-body">
+          <h3 data-en="SWIM CAPSULE — two swimmers' time capsule" data-es="SWIM CAPSULE — cápsula del tiempo de dos nadadores" data-zh="SWIM CAPSULE——两位选手的时间胶囊">SWIM CAPSULE — 두 선수의 타임캡슐</h3>
+          <p data-en="From Gwacheon to Irvine — meet results, articles and videos, archived as originals." data-es="De Gwacheon a Irvine — resultados, artículos y vídeos, archivados en original." data-zh="从果川到尔湾——比赛记录、报道与视频，原样存档。">과천에서 어바인까지, 대회 기록·기사·영상을 원본 그대로 보관하는 아카이브.</p>
+          <span class="card-date" data-en="Live · KR/EN" data-es="En línea · KR/EN" data-zh="运营中 · 韩/英">운영 중 · 한/영</span>
+        </div>
       </a>
       <a class="card" href="/projects/">
         <div class="thumb bip">🛠<span class="badge live">LIVE</span></div>
-        <div class="card-body"><h3>수영 앱 4종 프로젝트</h3><p>swim.meets · swim.capsule · SwimVault · SplitLane — 전부 GitHub 공개 개발.</p><span class="card-date">코드 공개 중</span></div>
+        <div class="card-body">
+          <h3 data-en="Four swim apps in progress" data-es="Cuatro apps de natación en marcha" data-zh="四款游泳应用项目">수영 앱 4종 프로젝트</h3>
+          <p data-en="swim.meets · swim.capsule · SwimVault · SplitLane — all developed in the open on GitHub." data-es="swim.meets · swim.capsule · SwimVault · SplitLane — desarrollo abierto en GitHub." data-zh="swim.meets · swim.capsule · SwimVault · SplitLane——全部在GitHub公开开发。">swim.meets · swim.capsule · SwimVault · SplitLane — 전부 GitHub 공개 개발.</p>
+          <span class="card-date" data-en="Open source" data-es="Código abierto" data-zh="代码公开中">코드 공개 중</span>
+        </div>
       </a>
       <a class="card" href="/about/">
         <div class="thumb dev">👋<span class="badge live">LIVE</span></div>
-        <div class="card-body"><h3>이 사람은 누구인가</h3><p>삼성 10년, 현대차·기아 10년, 그리고 두 아이의 수영. 3분 소개.</p><span class="card-date">About</span></div>
+        <div class="card-body">
+          <h3 data-en="Who is this guy?" data-es="¿Quién es este?" data-zh="这个人是谁？">이 사람은 누구인가</h3>
+          <p data-en="10 years at Samsung, 10 at Hyundai/Kia, and two young swimmers. A 3-minute intro." data-es="10 años en Samsung, 10 en Hyundai/Kia, y dos jóvenes nadadores. Intro de 3 minutos." data-zh="三星10年、现代/起亚10年，还有两个游泳的孩子。3分钟了解。">삼성 10년, 현대차·기아 10년, 그리고 두 아이의 수영. 3분 소개.</p>
+          <span class="card-date">About</span>
+        </div>
       </a>
     </div>
   </div>
@@ -170,28 +197,48 @@ layout: null
 
 <section id="story">
   <div class="wrap">
-    <div class="sec-head"><h2>💻 개발자 스토리</h2></div>
-    <p class="sec-sub">대기업 안에서 스타트업처럼 — 소수 인원으로 0→1 플랫폼을 글로벌 양산까지 밀어붙인 이야기. 매주 월요일 공개.</p>
+    <div class="sec-head"><h2 data-en="💻 Developer story" data-es="💻 Historia del desarrollador" data-zh="💻 开发者故事">💻 개발자 스토리</h2></div>
+    <p class="sec-sub" data-en="Working like a startup inside big tech — shipping 0→1 platforms to global production with tiny teams. New episode every Monday." data-es="Trabajar como startup dentro de una gran empresa — plataformas 0→1 hasta producción global con equipos mínimos. Nuevo episodio cada lunes." data-zh="在大企业里像创业公司一样工作——小团队把0→1平台推向全球量产。每周一更新。">대기업 안에서 스타트업처럼 — 소수 인원으로 0→1 플랫폼을 글로벌 양산까지 밀어붙인 이야기. 매주 월요일 공개.</p>
     <div class="rail">
       <div class="card">
         <div class="thumb dev"><span class="ep">EP.1</span>✍️<span class="badge soon" data-date="2026-07-27">7/27 공개</span></div>
-        <div class="card-body"><h3>나는 더 이상 글을 직접 쓰지 않는다</h3><p>생각은 내가, 완성은 에이전트가 — 이 블로그가 만들어지는 방식.</p><span class="card-date">2026.07.27 (월)</span></div>
+        <div class="card-body">
+          <h3 data-en="I don't write my own posts anymore" data-es="Ya no escribo mis propios textos" data-zh="我不再亲自写文章了">나는 더 이상 글을 직접 쓰지 않는다</h3>
+          <p data-en="How this blog gets made: my thinking, the agent's execution." data-es="Cómo se hace este blog: mi pensamiento, la ejecución del agente." data-zh="这个博客的制作方式：我思考，智能体执行。">생각은 내가, 완성은 에이전트가 — 이 블로그가 만들어지는 방식.</p>
+          <span class="card-date" data-en="2026.07.27 (Mon)" data-es="2026.07.27 (lun)" data-zh="2026.07.27（周一）">2026.07.27 (월)</span>
+        </div>
       </div>
       <div class="card">
         <div class="thumb dev"><span class="ep">EP.2</span>🤖<span class="badge soon" data-date="2026-08-10">8/10 공개</span></div>
-        <div class="card-body"><h3>카이스트 드라마를 보고 로봇축구를 시작한 아이</h3><p>거제도 소년이 세계대회 무대에 서기까지.</p><span class="card-date">2026.08.10 (월)</span></div>
+        <div class="card-body">
+          <h3 data-en="The kid who started robot soccer because of a TV drama" data-es="El niño que empezó fútbol de robots por una serie" data-zh="因一部电视剧开始机器人足球的少年">카이스트 드라마를 보고 로봇축구를 시작한 아이</h3>
+          <p data-en="From Geoje Island to the world championships." data-es="De la isla Geoje a los campeonatos mundiales." data-zh="从巨济岛少年到世界大赛舞台。">거제도 소년이 세계대회 무대에 서기까지.</p>
+          <span class="card-date" data-en="2026.08.10 (Mon)" data-es="2026.08.10 (lun)" data-zh="2026.08.10（周一）">2026.08.10 (월)</span>
+        </div>
       </div>
       <div class="card">
         <div class="thumb dev"><span class="ep">EP.3</span>🌙<span class="badge soon" data-date="2026-08-31">8/31 공개</span></div>
-        <div class="card-body"><h3>새벽 3시 출근이 남긴 것</h3><p>6개월 만에 3개 브랜드 글로벌 계정을 통합한 대가와 배움.</p><span class="card-date">2026.08.31 (월)</span></div>
+        <div class="card-body">
+          <h3 data-en="What 3 a.m. mornings left me" data-es="Lo que me dejaron las madrugadas a las 3" data-zh="凌晨三点上班留下的东西">새벽 3시 출근이 남긴 것</h3>
+          <p data-en="Unifying three brands' global accounts in six months — the cost and the lessons." data-es="Unificar las cuentas globales de tres marcas en seis meses — el coste y las lecciones." data-zh="6个月统一三个品牌的全球账户——代价与收获。">6개월 만에 3개 브랜드 글로벌 계정을 통합한 대가와 배움.</p>
+          <span class="card-date" data-en="2026.08.31 (Mon)" data-es="2026.08.31 (lun)" data-zh="2026.08.31（周一）">2026.08.31 (월)</span>
+        </div>
       </div>
       <div class="card">
         <div class="thumb dev"><span class="ep">EP.4</span>🚗<span class="badge soon" data-date="2026-09-14">9/14 공개</span></div>
-        <div class="card-body"><h3>3명이 커넥티드카 플랫폼으로 4개국을 런칭한 방법</h3><p>백업 플랜 없이 유럽→한국→중국→인도.</p><span class="card-date">2026.09.14 (월)</span></div>
+        <div class="card-body">
+          <h3 data-en="How 3 engineers launched a connected-car platform in 4 countries" data-es="Cómo 3 ingenieros lanzaron una plataforma en 4 países" data-zh="3个人如何在4个国家上线互联汽车平台">3명이 커넥티드카 플랫폼으로 4개국을 런칭한 방법</h3>
+          <p data-en="No plan B: Europe → Korea → China → India." data-es="Sin plan B: Europa → Corea → China → India." data-zh="没有备用方案：欧洲→韩国→中国→印度。">백업 플랜 없이 유럽→한국→중국→인도.</p>
+          <span class="card-date" data-en="2026.09.14 (Mon)" data-es="2026.09.14 (lun)" data-zh="2026.09.14（周一）">2026.09.14 (월)</span>
+        </div>
       </div>
       <div class="card">
         <div class="thumb dev"><span class="ep">EP.5</span>📡<span class="badge soon" data-date="2026-09-28">9/28 공개</span></div>
-        <div class="card-body"><h3>AI가 대체하는 것과 대체하지 못하는 것</h3><p>20년차 개발자의 관점.</p><span class="card-date">2026.09.28 (월)</span></div>
+        <div class="card-body">
+          <h3 data-en="What AI replaces — and what it can't" data-es="Lo que la IA reemplaza — y lo que no" data-zh="AI能取代什么，不能取代什么">AI가 대체하는 것과 대체하지 못하는 것</h3>
+          <p data-en="A 20-year engineer's view." data-es="La visión de un ingeniero con 20 años de carrera." data-zh="20年开发者的视角。">20년차 개발자의 관점.</p>
+          <span class="card-date" data-en="2026.09.28 (Mon)" data-es="2026.09.28 (lun)" data-zh="2026.09.28（周一）">2026.09.28 (월)</span>
+        </div>
       </div>
     </div>
   </div>
@@ -199,28 +246,48 @@ layout: null
 
 <section>
   <div class="wrap">
-    <div class="sec-head"><h2>🏊 수영 부모 스토리</h2></div>
-    <p class="sec-sub">한국 2년 + 미국 2년, 선수 아이 둘을 키운 부모의 실전 기록. 격주 일요일 공개.</p>
+    <div class="sec-head"><h2 data-en="🏊 Swim parent story" data-es="🏊 Historia de padres de natación" data-zh="🏊 游泳家长故事">🏊 수영 부모 스토리</h2></div>
+    <p class="sec-sub" data-en="Two years in Korea, two in the U.S. — field notes from raising two competitive swimmers. Every other Monday." data-es="Dos años en Corea, dos en EE. UU. — notas de campo criando a dos nadadores de competición. Lunes alternos." data-zh="韩国2年+美国2年，养育两位游泳选手的实战记录。隔周周一更新。">한국 2년 + 미국 2년, 선수 아이 둘을 키운 부모의 실전 기록. 격주 월요일 공개.</p>
     <div class="rail">
       <div class="card">
         <div class="thumb swim"><span class="ep">EP.1</span>👶<span class="badge soon" data-date="2026-08-03">8/3 공개</span></div>
-        <div class="card-body"><h3>아이 수영, 몇 살부터 시작해야 할까</h3><p>영어유치원 대신 유아체능단을 선택한 이유.</p><span class="card-date">2026.08.03 (월)</span></div>
+        <div class="card-body">
+          <h3 data-en="When should kids start swimming?" data-es="¿A qué edad empezar la natación?" data-zh="孩子几岁开始学游泳？">아이 수영, 몇 살부터 시작해야 할까</h3>
+          <p data-en="Why we chose a sports kindergarten over an English one." data-es="Por qué elegimos un preescolar deportivo y no uno de inglés." data-zh="为什么我们选择了体育幼儿园而不是英语幼儿园。">영어유치원 대신 유아체능단을 선택한 이유.</p>
+          <span class="card-date" data-en="2026.08.03 (Mon)" data-es="2026.08.03 (lun)" data-zh="2026.08.03（周一）">2026.08.03 (월)</span>
+        </div>
       </div>
       <div class="card">
         <div class="thumb swim"><span class="ep">EP.2</span>💪<span class="badge soon" data-date="2026-08-17">8/17 공개</span></div>
-        <div class="card-body"><h3>물을 무서워하던 딸이 경기도대표가 되기까지</h3><p>발차기부터 다시 시작한 성장의 기록.</p><span class="card-date">2026.08.17 (월)</span></div>
+        <div class="card-body">
+          <h3 data-en="From afraid of water to the provincial team" data-es="Del miedo al agua a la selección provincial" data-zh="从怕水到入选道代表队">물을 무서워하던 딸이 경기도대표가 되기까지</h3>
+          <p data-en="A growth story that restarted from kickboard basics." data-es="Una historia de crecimiento que empezó de nuevo con la patada básica." data-zh="从重新练打腿开始的成长记录。">발차기부터 다시 시작한 성장의 기록.</p>
+          <span class="card-date" data-en="2026.08.17 (Mon)" data-es="2026.08.17 (lun)" data-zh="2026.08.17（周一）">2026.08.17 (월)</span>
+        </div>
       </div>
       <div class="card">
         <div class="thumb swim"><span class="ep">EP.3</span>🇰🇷🇺🇸<span class="badge soon" data-date="2026-09-07">9/7 공개</span></div>
-        <div class="card-body"><h3>한국 훈련 vs 미국 훈련</h3><p>두 나라를 모두 겪은 부모가 본 결정적 차이.</p><span class="card-date">2026.09.07 (월)</span></div>
+        <div class="card-body">
+          <h3 data-en="Training in Korea vs. the U.S." data-es="Entrenar en Corea vs. EE. UU." data-zh="韩国训练 vs 美国训练">한국 훈련 vs 미국 훈련</h3>
+          <p data-en="The decisive differences, seen by a parent who lived both." data-es="Las diferencias decisivas, vistas por un padre que vivió ambos." data-zh="亲历两国的家长眼中的决定性差异。">두 나라를 모두 겪은 부모가 본 결정적 차이.</p>
+          <span class="card-date" data-en="2026.09.07 (Mon)" data-es="2026.09.07 (lun)" data-zh="2026.09.07（周一）">2026.09.07 (월)</span>
+        </div>
       </div>
       <div class="card">
         <div class="thumb swim"><span class="ep">EP.4</span>🥉<span class="badge soon" data-date="2026-09-21">9/21 공개</span></div>
-        <div class="card-body"><h3>첫 대회 9위, 결승 탈락 — 그날 해준 말</h3><p>그리고 주종목이 아닌 종목으로 딴 첫 전국 메달.</p><span class="card-date">2026.09.21 (월)</span></div>
+        <div class="card-body">
+          <h3 data-en="9th place, out of the final — what I said that day" data-es="9.º puesto, fuera de la final — lo que le dije ese día" data-zh="首赛第9名无缘决赛——那天我说的话">첫 대회 9위, 결승 탈락 — 그날 해준 말</h3>
+          <p data-en="And the first national medal — in his off event." data-es="Y la primera medalla nacional — en una prueba secundaria." data-zh="以及用副项摘得的第一枚全国奖牌。">그리고 주종목이 아닌 종목으로 딴 첫 전국 메달.</p>
+          <span class="card-date" data-en="2026.09.21 (Mon)" data-es="2026.09.21 (lun)" data-zh="2026.09.21（周一）">2026.09.21 (월)</span>
+        </div>
       </div>
       <div class="card">
         <div class="thumb swim"><span class="ep">SHORTS</span>🎥<span class="badge soon" data-date="2026-10-05">10월 시작</span></div>
-        <div class="card-body"><h3>유튜브 쇼츠 — 아이 수영 1분 상식</h3><p>글로 쌓은 이야기를 1분 영상 시리즈로.</p><span class="card-date">2026.10 첫 공개</span></div>
+        <div class="card-body">
+          <h3 data-en="YouTube Shorts — 1-minute swim tips for parents" data-es="YouTube Shorts — natación en 1 minuto para padres" data-zh="YouTube Shorts——少儿游泳1分钟常识">유튜브 쇼츠 — 아이 수영 1분 상식</h3>
+          <p data-en="The stories, retold as a 1-minute video series." data-es="Las historias, contadas en vídeos de 1 minuto." data-zh="把积累的故事做成1分钟视频系列。">글로 쌓은 이야기를 1분 영상 시리즈로.</p>
+          <span class="card-date" data-en="First drop 2026.10" data-es="Estreno 2026.10" data-zh="2026.10 首发">2026.10 첫 공개</span>
+        </div>
       </div>
     </div>
   </div>
@@ -228,24 +295,40 @@ layout: null
 
 <section>
   <div class="wrap">
-    <div class="sec-head"><h2>🛠 Build in Public — 수영 앱이 만들어지는 과정</h2><a class="more" href="/projects/">프로젝트 전체 →</a></div>
-    <p class="sec-sub">개발자 아빠가 AI 에이전트와 함께 수영 앱을 만듭니다. 잘 되는 것도, 안 되는 것도 그대로 공개합니다.</p>
+    <div class="sec-head"><h2 data-en="🛠 Build in Public — how the swim apps get made" data-es="🛠 Build in Public — cómo se construyen las apps" data-zh="🛠 Build in Public——游泳应用的诞生过程">🛠 Build in Public — 수영 앱이 만들어지는 과정</h2><a class="more" href="/projects/" data-en="All projects →" data-es="Todos los proyectos →" data-zh="全部项目 →">프로젝트 전체 →</a></div>
+    <p class="sec-sub" data-en="A developer dad building swim apps with AI agents. Wins and failures, all in the open." data-es="Un padre desarrollador creando apps de natación con agentes de IA. Aciertos y fracasos, todo en abierto." data-zh="开发者爸爸与AI智能体一起做游泳应用。成与败，全部公开。">개발자 아빠가 AI 에이전트와 함께 수영 앱을 만듭니다. 잘 되는 것도, 안 되는 것도 그대로 공개합니다.</p>
     <div class="rail">
       <a class="card" href="https://github.com/kyj5482/swim.meet.timer">
-        <div class="thumb bip">⏱<span class="badge live">개발 중</span></div>
-        <div class="card-body"><h3>SplitLane — 출시 1순위</h3><p>수영 타이머+기록(무료)에서 AI 코치 분석(구독)으로 성장하는 앱.</p><span class="card-date">2027 상반기 스토어 출시 목표</span></div>
+        <div class="thumb bip">⏱<span class="badge live" data-en="Building" data-es="En curso" data-zh="开发中">개발 중</span></div>
+        <div class="card-body">
+          <h3 data-en="SplitLane — first to ship" data-es="SplitLane — el primero en salir" data-zh="SplitLane——首发应用">SplitLane — 출시 1순위</h3>
+          <p data-en="From free swim timer + records to AI-coach analytics (subscription)." data-es="De cronómetro y registros gratis a análisis con IA (suscripción)." data-zh="从免费计时+记录成长为AI教练分析（订阅）。">수영 타이머+기록(무료)에서 AI 코치 분석(구독)으로 성장하는 앱.</p>
+          <span class="card-date" data-en="Store launch target: H1 2027" data-es="Meta: tiendas en H1 2027" data-zh="目标2027上半年上架">2027 상반기 스토어 출시 목표</span>
+        </div>
       </a>
       <div class="card">
-        <div class="thumb bip"><span class="ep">일지 #1</span>📓<span class="badge soon" data-date="2026-08-24">8/24 공개</span></div>
-        <div class="card-body"><h3>수영 선수 아빠가 앱을 4개나 만든 이유</h3><p>Build in Public 개발 일지, 월 1회 연재 시작.</p><span class="card-date">2026.08.24 (월)</span></div>
+        <div class="thumb bip"><span class="ep" data-en="LOG #1" data-es="DIARIO 1" data-zh="日志 #1">일지 #1</span>📓<span class="badge soon" data-date="2026-08-24">8/24 공개</span></div>
+        <div class="card-body">
+          <h3 data-en="Why a swim dad built four apps" data-es="Por qué un padre nadador hizo 4 apps" data-zh="游泳选手爸爸为什么做了4款应用">수영 선수 아빠가 앱을 4개나 만든 이유</h3>
+          <p data-en="Monthly build-in-public devlog, starting here." data-es="Diario mensual de desarrollo en público, empieza aquí." data-zh="每月一期的公开开发日志，从这里开始。">Build in Public 개발 일지, 월 1회 연재 시작.</p>
+          <span class="card-date" data-en="2026.08.24 (Mon)" data-es="2026.08.24 (lun)" data-zh="2026.08.24（周一）">2026.08.24 (월)</span>
+        </div>
       </div>
       <a class="card" href="https://github.com/kyj5482/swim.meets">
-        <div class="thumb bip">📋<span class="badge live">운영 중</span></div>
-        <div class="card-body"><h3>swim.meets</h3><p>수천 명 출전표에서 우리 아이 기록만 자동 추출. 매 대회 실사용 중.</p><span class="card-date">GitHub 공개</span></div>
+        <div class="thumb bip">📋<span class="badge live" data-en="Running" data-es="En uso" data-zh="运营中">운영 중</span></div>
+        <div class="card-body">
+          <h3>swim.meets</h3>
+          <p data-en="Pulls your kid's entries from thousand-swimmer psych sheets. Used at every meet." data-es="Extrae los datos de tu hijo de listas con miles de nadadores. Lo usamos en cada competición." data-zh="从数千人的出场表中自动提取自家孩子的记录。每场比赛实际使用。">수천 명 출전표에서 우리 아이 기록만 자동 추출. 매 대회 실사용 중.</p>
+          <span class="card-date" data-en="On GitHub" data-es="En GitHub" data-zh="GitHub公开">GitHub 공개</span>
+        </div>
       </a>
       <a class="card" href="https://github.com/kyj5482/swim.meet.portfolio">
-        <div class="thumb bip">📸<span class="badge live">설계 공개</span></div>
-        <div class="card-body"><h3>SwimVault</h3><p>결과지 사진 한 장 → AI 추출 → 평생 수영 기록부.</p><span class="card-date">GitHub 공개</span></div>
+        <div class="thumb bip">📸<span class="badge live" data-en="Design open" data-es="Diseño abierto" data-zh="设计公开">설계 공개</span></div>
+        <div class="card-body">
+          <h3>SwimVault</h3>
+          <p data-en="One photo of results → AI extraction → a lifetime swim record." data-es="Una foto de resultados → extracción con IA → historial de natación de por vida." data-zh="一张成绩单照片→AI提取→终身游泳记录簿。">결과지 사진 한 장 → AI 추출 → 평생 수영 기록부.</p>
+          <span class="card-date" data-en="On GitHub" data-es="En GitHub" data-zh="GitHub公开">GitHub 공개</span>
+        </div>
       </a>
     </div>
   </div>
@@ -253,28 +336,28 @@ layout: null
 
 <section id="history">
   <div class="wrap">
-    <div class="sec-head"><h2>🧭 걸어온 길</h2></div>
-    <p class="sec-sub">이 실험은 하루아침에 나온 게 아닙니다 — 20년의 기록입니다.</p>
+    <div class="sec-head"><h2 data-en="🧭 The journey" data-es="🧭 La trayectoria" data-zh="🧭 成长历程">🧭 걸어온 길</h2></div>
+    <p class="sec-sub" data-en="This experiment didn't come out of nowhere — it's 20 years in the making." data-es="Este experimento no salió de la nada — lleva 20 años gestándose." data-zh="这场实验并非一朝一夕——是20年的积累。">이 실험은 하루아침에 나온 게 아닙니다 — 20년의 기록입니다.</p>
     <div class="two-col">
       <div>
         <div class="tl">
-          <div class="tl-item"><time>1990s</time><h3>거제도, 코딩을 만나다</h3><p>초등학생 때 알고리즘을 배우고, 고등학교 홈페이지를 만들며 개발자의 길을 시작.</p></div>
-          <div class="tl-item"><time>대학 ~ 대학원</time><h3>로봇축구, 세계 무대까지</h3><p>카이스트 드라마를 보고 시작한 로봇축구로 전국대회를 넘어 세계대회 입상.</p></div>
-          <div class="tl-item"><time>2006</time><h3>홀로 떠난 미국 20일</h3><p>스마트폰도 지도도 없이 대중교통으로 서부를 횡단. 세상을 보는 눈이 바뀐 첫 여행.</p></div>
-          <div class="tl-item"><time>2007 ~ 2016</time><h3>삼성 10년 — 플랫폼의 기본기</h3><p>소프트웨어멤버십 4년, 종합기술원에서 타이젠 Convergence Platform. 모바일·TV·가전 양산 E2E, 매년 논문·특허.</p></div>
-          <div class="tl-item"><time>2017</time><h3>현대차 이직 — 6개월의 전설</h3><p>사실상 1인 개발로 3개 브랜드 글로벌 통합 계정을 6개월 만에 런칭. 새벽 3시 출근의 시절.</p></div>
-          <div class="tl-item"><time>2017 ~ 2018</time><h3>커넥티드카 플랫폼, 3명이 4개국</h3><p>API G/W부터 앱 서버까지 3명이 만들어 유럽·한국·중국·인도 런칭과 운영까지.</p></div>
-          <div class="tl-item"><time>~ 2023</time><h3>Vehicle Twin — 차와 서버를 잇다</h3><p>실리콘밸리에서 설계한 디지털 트윈으로 원격진단 서비스 실현.</p></div>
-          <div class="tl-item"><time>2024 ~</time><h3>미국 주재원 — 데이터를 비즈니스로</h3><p>기아 북미 빅데이터센터 정상화, 수집 비용 구조 개선, AI 마이크로앱을 1일 1앱으로 출시하는 프로세스 구축.</p></div>
+          <div class="tl-item"><time>1990s</time><h3 data-en="Geoje Island: meeting code" data-es="Isla Geoje: conocer el código" data-zh="巨济岛，与编程相遇">거제도, 코딩을 만나다</h3><p data-en="Learned algorithms in elementary school; built the high-school website." data-es="Aprendió algoritmos en primaria; creó la web del instituto." data-zh="小学学习算法，高中搭建学校网站，开启开发者之路。">초등학생 때 알고리즘을 배우고, 고등학교 홈페이지를 만들며 개발자의 길을 시작.</p></div>
+          <div class="tl-item"><time data-en="College–Grad school" data-es="Universidad–Posgrado" data-zh="大学~研究生院">대학 ~ 대학원</time><h3 data-en="Robot soccer, to the world stage" data-es="Fútbol de robots, al escenario mundial" data-zh="机器人足球，走向世界舞台">로봇축구, 세계 무대까지</h3><p data-en="Inspired by a TV drama — from national contests to world-championship podiums." data-es="Inspirado por una serie de TV — de concursos nacionales al podio mundial." data-zh="因电视剧而起，从全国大赛到世界大赛领奖台。">카이스트 드라마를 보고 시작한 로봇축구로 전국대회를 넘어 세계대회 입상.</p></div>
+          <div class="tl-item"><time>2006</time><h3 data-en="20 days alone across America" data-es="20 días solo por EE. UU." data-zh="独自游历美国20天">홀로 떠난 미국 20일</h3><p data-en="No smartphone, no maps — buses, trains and questions. The trip that changed how I see the world." data-es="Sin smartphone ni mapas — autobuses, trenes y preguntas. El viaje que cambió mi mirada." data-zh="没有智能手机和地图，靠问路与公共交通。改变世界观的第一次旅行。">스마트폰도 지도도 없이 대중교통으로 서부를 횡단. 세상을 보는 눈이 바뀐 첫 여행.</p></div>
+          <div class="tl-item"><time>2007 ~ 2016</time><h3 data-en="10 years at Samsung — platform fundamentals" data-es="10 años en Samsung — fundamentos de plataforma" data-zh="三星10年——平台基本功">삼성 10년 — 플랫폼의 기본기</h3><p data-en="Tizen Convergence Platform at SAIT; phones, TVs and appliances shipped end-to-end; papers and patents every year." data-es="Tizen Convergence Platform en SAIT; móviles, TVs y electrodomésticos de punta a punta; papers y patentes cada año." data-zh="在综合技术院开发Tizen融合平台；手机、电视、家电端到端量产；每年发表论文与专利。">소프트웨어멤버십 4년, 종합기술원에서 타이젠 Convergence Platform. 모바일·TV·가전 양산 E2E, 매년 논문·특허.</p></div>
+          <div class="tl-item"><time>2017</time><h3 data-en="To Hyundai — the six-month legend" data-es="A Hyundai — la leyenda de los 6 meses" data-zh="跳槽现代——6个月的传奇">현대차 이직 — 6개월의 전설</h3><p data-en="Effectively a one-man build: three brands' global accounts unified in six months. The 3 a.m. era." data-es="Prácticamente en solitario: cuentas globales de tres marcas unificadas en seis meses. La era de las 3 a. m." data-zh="几乎一人开发，6个月统一三个品牌的全球账户。凌晨三点的岁月。">사실상 1인 개발로 3개 브랜드 글로벌 통합 계정을 6개월 만에 런칭. 새벽 3시 출근의 시절.</p></div>
+          <div class="tl-item"><time>2017 ~ 2018</time><h3 data-en="Connected-car platform: 3 people, 4 countries" data-es="Plataforma de coche conectado: 3 personas, 4 países" data-zh="互联汽车平台：3人4国">커넥티드카 플랫폼, 3명이 4개국</h3><p data-en="From API gateway to app servers — built, launched and operated across Europe, Korea, China and India." data-es="Del API gateway a los servidores de apps — construido, lanzado y operado en Europa, Corea, China e India." data-zh="从API网关到应用服务器，3人完成开发，在欧洲、韩国、中国、印度上线并运营。">API G/W부터 앱 서버까지 3명이 만들어 유럽·한국·중국·인도 런칭과 운영까지.</p></div>
+          <div class="tl-item"><time>~ 2023</time><h3 data-en="Vehicle Twin — linking car and cloud" data-es="Vehicle Twin — unir coche y nube" data-zh="Vehicle Twin——连接汽车与云端">Vehicle Twin — 차와 서버를 잇다</h3><p data-en="A digital twin designed in Silicon Valley, powering remote diagnostics." data-es="Un gemelo digital diseñado en Silicon Valley, base del diagnóstico remoto." data-zh="在硅谷设计的数字孪生，实现远程诊断服务。">실리콘밸리에서 설계한 디지털 트윈으로 원격진단 서비스 실현.</p></div>
+          <div class="tl-item"><time>2024 ~</time><h3 data-en="Expat in the U.S. — data into business" data-es="Expatriado en EE. UU. — datos a negocio" data-zh="驻美——让数据创造业务价值">미국 주재원 — 데이터를 비즈니스로</h3><p data-en="Stabilized Kia's North-American big-data center, cut collection costs, and built a one-app-a-day AI micro-app process." data-es="Estabilizó el centro de big data de Kia en Norteamérica, redujo costes y montó un proceso de micro-apps de IA a app por día." data-zh="稳定起亚北美大数据中心、优化采集成本，建立日均一款AI微应用的流程。">기아 북미 빅데이터센터 정상화, 수집 비용 구조 개선, AI 마이크로앱을 1일 1앱으로 출시하는 프로세스 구축.</p></div>
         </div>
       </div>
       <div>
         <div class="tl">
-          <div class="tl-item swim"><time>유치원</time><h3>수영과의 첫 만남</h3><p>영어유치원 대신 유아체능단. 1년 만에 동네 대회 입상.</p></div>
-          <div class="tl-item swim"><time>초등학교</time><h3>선수 등록, 그리고 첫 9위</h3><p>첫 공식 대회 결승 탈락의 속상함이 성장의 시작이 되다.</p></div>
-          <div class="tl-item swim"><time>한국 2년</time><h3>전국 메달, 두 아이 모두</h3><p>아들은 접영 전국 3위, 딸은 생활체육 경기도대표. 대회 원정마다 지역의 맛과 경험을 선물로.</p></div>
-          <div class="tl-item swim"><time>미국 2년</time><h3>미국 전국 8위</h3><p>완전히 다른 훈련 문화에 적응하며 양국 메달리스트로 성장.</p></div>
-          <div class="tl-item swim"><time>2026 ~</time><h3>기록을 자산으로</h3><p>이 모든 경험을 콘텐츠와 앱으로 — 아이들의 미래 퍼스널 브랜딩 자산까지.</p></div>
+          <div class="tl-item swim"><time data-en="Kindergarten" data-es="Preescolar" data-zh="幼儿园">유치원</time><h3 data-en="First splash" data-es="Primer contacto con el agua" data-zh="初识游泳">수영과의 첫 만남</h3><p data-en="A sports kindergarten instead of an English academy; a local-meet medal within a year." data-es="Un preescolar deportivo en vez de academia de inglés; medalla local en un año." data-zh="选择体育幼儿园而非英语班，一年内在社区比赛获奖。">영어유치원 대신 유아체능단. 1년 만에 동네 대회 입상.</p></div>
+          <div class="tl-item swim"><time data-en="Elementary" data-es="Primaria" data-zh="小学">초등학교</time><h3 data-en="Athlete registration, and a first 9th place" data-es="Registro de atleta, y un primer 9.º puesto" data-zh="注册选手，以及第一次第9名">선수 등록, 그리고 첫 9위</h3><p data-en="Missing the final at the first official meet — where the growth began." data-es="Quedarse fuera de la final en el primer campeonato oficial — ahí empezó el crecimiento." data-zh="首次正式比赛无缘决赛——成长由此开始。">첫 공식 대회 결승 탈락의 속상함이 성장의 시작이 되다.</p></div>
+          <div class="tl-item swim"><time data-en="Korea, 2 years" data-es="Corea, 2 años" data-zh="韩国2年">한국 2년</time><h3 data-en="National medals — both kids" data-es="Medallas nacionales — los dos" data-zh="全国奖牌，两个孩子都有">전국 메달, 두 아이 모두</h3><p data-en="Butterfly bronze nationally; provincial-team honors. Every away meet became a family trip worth remembering." data-es="Bronce nacional en mariposa; selección provincial. Cada viaje a competir se volvió un viaje familiar memorable." data-zh="蝶泳全国季军、道代表队入选。每次远征比赛都变成值得铭记的家庭旅行。">아들은 접영 전국 3위, 딸은 생활체육 경기도대표. 대회 원정마다 지역의 맛과 경험을 선물로.</p></div>
+          <div class="tl-item swim"><time data-en="U.S., 2 years" data-es="EE. UU., 2 años" data-zh="美国2年">미국 2년</time><h3 data-en="Top-8 in the U.S." data-es="Top-8 en EE. UU." data-zh="全美第8名">미국 전국 8위</h3><p data-en="Adapting to a whole new training culture — and medaling in both countries." data-es="Adaptarse a una cultura de entrenamiento nueva — y medallas en ambos países." data-zh="适应全新的训练文化，成长为两国奖牌选手。">완전히 다른 훈련 문화에 적응하며 양국 메달리스트로 성장.</p></div>
+          <div class="tl-item swim"><time>2026 ~</time><h3 data-en="Turning records into assets" data-es="De registros a patrimonio" data-zh="把记录变成资产">기록을 자산으로</h3><p data-en="All of it becomes content and apps — and someday, the kids' own personal brands." data-es="Todo se convierte en contenido y apps — y algún día, en la marca personal de los chicos." data-zh="这一切都将成为内容与应用——乃至孩子们未来的个人品牌资产。">이 모든 경험을 콘텐츠와 앱으로 — 아이들의 미래 퍼스널 브랜딩 자산까지.</p></div>
         </div>
       </div>
     </div>
@@ -283,16 +366,16 @@ layout: null
 
 <section id="roadmap">
   <div class="wrap">
-    <div class="sec-head"><h2>🗓 앞으로의 일정</h2></div>
-    <p class="sec-sub">언제 무엇이 나오는지 미리 알려드립니다. 매번 확인하러 오지 않아도, 뉴스레터가 알려드립니다.</p>
+    <div class="sec-head"><h2 data-en="🗓 What's coming, and when" data-es="🗓 Qué viene y cuándo" data-zh="🗓 发布计划">🗓 앞으로의 일정</h2></div>
+    <p class="sec-sub" data-en="Release dates, published in advance. You don't need to keep checking — the newsletter will tell you." data-es="Fechas de publicación anunciadas por adelantado. No hace falta volver a mirar — el boletín te avisará." data-zh="提前公开发布时间。不必反复查看——订阅邮件即可获知。">언제 무엇이 나오는지 미리 알려드립니다. 매번 확인하러 오지 않아도, 뉴스레터가 알려드립니다.</p>
     <div class="tl">
-      <div class="tl-item done"><time>2026.07</time><h3>블로그 재가동 + 시작 선언</h3><p>퍼스널 브랜딩 시스템 구축, 첫 글 발행.</p><span class="chip">✓ 완료</span></div>
-      <div class="tl-item future"><time>2026.07 ~</time><h3>매주 월요일, 새 글 1편</h3><p>개발자 스토리와 수영 부모 스토리를 격주로 교차 연재.</p><span class="chip">진행 중</span></div>
-      <div class="tl-item future"><time>2026.08</time><h3>뉴스레터 창간호 (Maily)</h3><p>격주 발행 — 새 글 요약, 앱 개발 진행 상황, 다음 콘텐츠 예고.</p><span class="chip">예정</span></div>
-      <div class="tl-item future"><time>2026.10</time><h3>유튜브 쇼츠 시작</h3><p>"아이 수영 1분 상식"부터 파일럿 10편.</p><span class="chip">예정</span></div>
-      <div class="tl-item future"><time>2026 Q4 ~ 2027 H1</time><h3>SplitLane 무료 앱 출시</h3><p>수영 타이머+기록 앱, TestFlight/Play 테스트를 거쳐 스토어 배포.</p><span class="chip">예정</span></div>
-      <div class="tl-item future"><time>2027 H2</time><h3>SplitLane AI 코치 (구독) + 첫 수익 실험</h3><p>표준기록 대비 성장 분석. 결과 숫자는 그대로 공개.</p><span class="chip">예정</span></div>
-      <div class="tl-item future"><time>2028</time><h3>확산의 해</h3><p>2년의 실험 결과를 숫자와 함께 총결산.</p><span class="chip">예정</span></div>
+      <div class="tl-item done"><time>2026.07</time><h3 data-en="Blog relaunch + announcement" data-es="Relanzamiento del blog + declaración" data-zh="博客重启+开篇宣言">블로그 재가동 + 시작 선언</h3><p data-en="Branding system built; first post published." data-es="Sistema de marca construido; primer artículo publicado." data-zh="品牌系统搭建完成，首篇文章发布。">퍼스널 브랜딩 시스템 구축, 첫 글 발행.</p><span class="chip" data-en="✓ Done" data-es="✓ Hecho" data-zh="✓ 完成">✓ 완료</span></div>
+      <div class="tl-item future"><time>2026.07 ~</time><h3 data-en="A new post every Monday" data-es="Un artículo nuevo cada lunes" data-zh="每周一更新一篇">매주 월요일, 새 글 1편</h3><p data-en="Developer and swim-parent stories, alternating weekly." data-es="Historias de desarrollador y de padres, en semanas alternas." data-zh="开发者故事与游泳家长故事隔周交替连载。">개발자 스토리와 수영 부모 스토리를 격주로 교차 연재.</p><span class="chip" data-en="Ongoing" data-es="En curso" data-zh="进行中">진행 중</span></div>
+      <div class="tl-item future"><time>2026.08</time><h3 data-en="Newsletter issue #1 (Maily)" data-es="Boletín n.º 1 (Maily)" data-zh="Newsletter创刊号（Maily）">뉴스레터 창간호 (Maily)</h3><p data-en="Biweekly — new-post digests, app progress, and what's next." data-es="Quincenal — resúmenes, avances de las apps y lo que viene." data-zh="隔周发行——新文摘要、应用进展、下期预告。">격주 발행 — 새 글 요약, 앱 개발 진행 상황, 다음 콘텐츠 예고.</p><span class="chip" data-en="Planned" data-es="Previsto" data-zh="计划中">예정</span></div>
+      <div class="tl-item future"><time>2026.10</time><h3 data-en="YouTube Shorts begins" data-es="Comienzan los YouTube Shorts" data-zh="YouTube Shorts上线">유튜브 쇼츠 시작</h3><p data-en="A 10-episode pilot: 1-minute swim tips for parents." data-es="Piloto de 10 episodios: natación en 1 minuto para padres." data-zh="试播10集：“少儿游泳1分钟常识”。">"아이 수영 1분 상식"부터 파일럿 10편.</p><span class="chip" data-en="Planned" data-es="Previsto" data-zh="计划中">예정</span></div>
+      <div class="tl-item future"><time>2026 Q4 ~ 2027 H1</time><h3 data-en="SplitLane free app launch" data-es="Lanzamiento de la app gratuita SplitLane" data-zh="SplitLane免费版上架">SplitLane 무료 앱 출시</h3><p data-en="Swim timer + records, through TestFlight/Play to the stores." data-es="Cronómetro y registros, de TestFlight/Play a las tiendas." data-zh="游泳计时+记录应用，经TestFlight/Play测试后上架。">수영 타이머+기록 앱, TestFlight/Play 테스트를 거쳐 스토어 배포.</p><span class="chip" data-en="Planned" data-es="Previsto" data-zh="计划中">예정</span></div>
+      <div class="tl-item future"><time>2027 H2</time><h3 data-en="SplitLane AI coach (subscription) + first revenue" data-es="SplitLane AI coach (suscripción) + primeros ingresos" data-zh="SplitLane AI教练（订阅）+首次营收实验">SplitLane AI 코치 (구독) + 첫 수익 실험</h3><p data-en="Progress analytics vs. time standards. Real numbers, published." data-es="Análisis de progreso frente a estándares. Números reales, publicados." data-zh="对照达标线的成长分析。真实数字，如实公开。">표준기록 대비 성장 분석. 결과 숫자는 그대로 공개.</p><span class="chip" data-en="Planned" data-es="Previsto" data-zh="计划中">예정</span></div>
+      <div class="tl-item future"><time>2028</time><h3 data-en="The year of scale" data-es="El año de la expansión" data-zh="扩张之年">확산의 해</h3><p data-en="A full, numbers-included review of the two-year experiment." data-es="Balance completo, con números, del experimento de dos años." data-zh="两年实验的完整复盘，数字全公开。">2년의 실험 결과를 숫자와 함께 총결산.</p><span class="chip" data-en="Planned" data-es="Previsto" data-zh="计划中">예정</span></div>
     </div>
   </div>
 </section>
@@ -300,18 +383,18 @@ layout: null
 <section id="newsletter">
   <div class="wrap">
     <div class="news">
-      <h2>📮 매번 들어와서 확인하지 마세요</h2>
-      <p>새 글·쇼츠·앱 소식이 나오면 2주에 한 번, 메일 한 통으로 정리해 보내드립니다.
-        광고 없이, 언제든 회신 한 번으로 구독 취소.</p>
-      <a class="btn" href="https://maily.so/solostartup" target="_blank" rel="noopener">뉴스레터 구독하기</a>
-      <small>maily.so/solostartup · 이메일 신청도 가능합니다: <a href="mailto:kyj5482@gmail.com?subject=뉴스레터%20구독" style="text-decoration:underline">kyj5482@gmail.com</a></small>
+      <h2 data-en="📮 Don't keep checking back" data-es="📮 No hace falta volver cada día" data-zh="📮 不必每次都来查看">📮 매번 들어와서 확인하지 마세요</h2>
+      <p data-en="Every two weeks, one email: new posts, shorts and app updates. No ads; unsubscribe anytime with one click." data-es="Cada dos semanas, un correo: artículos nuevos, shorts y avances de las apps. Sin anuncios; date de baja con un clic." data-zh="每两周一封邮件：新文章、短视频与应用进展。无广告，随时一键退订。">새 글·쇼츠·앱 소식이 나오면 2주에 한 번, 메일 한 통으로 정리해 보내드립니다.
+        광고 없이, 언제든 클릭 한 번으로 구독 취소.</p>
+      <a class="btn" href="https://maily.so/solostartup" target="_blank" rel="noopener" data-en="Subscribe" data-es="Suscribirme" data-zh="订阅Newsletter">뉴스레터 구독하기</a>
+      <small>maily.so/solostartup · <span data-en="or by email:" data-es="o por correo:" data-zh="也可通过邮件订阅：">이메일 신청도 가능합니다:</span> <a href="mailto:kyj5482@gmail.com?subject=뉴스레터%20구독">kyj5482@gmail.com</a></small>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap foot">
-    <span>© 2026 Yongjin Kim · 1인 스타트업</span>
+    <span data-en="© 2026 Yongjin Kim · Solo Startup" data-es="© 2026 Yongjin Kim · Solo Startup" data-zh="© 2026 Yongjin Kim · 一人创业">© 2026 Yongjin Kim · 1인 스타트업</span>
     <div class="links">
       <a href="https://github.com/kyj5482">GitHub</a>
       <a href="https://www.linkedin.com/in/youthkim">LinkedIn</a>
@@ -323,15 +406,62 @@ layout: null
 </footer>
 
 <script>
-  // 공개 예정 배지에 D-day 표시
   (function(){
-    var today = new Date(); today.setHours(0,0,0,0);
-    document.querySelectorAll('.badge.soon[data-date]').forEach(function(b){
-      var d = new Date(b.getAttribute('data-date') + 'T00:00:00');
-      var diff = Math.round((d - today) / 86400000);
-      if (diff > 0 && diff <= 30) { b.textContent = 'D-' + diff; }
-      else if (diff === 0) { b.textContent = '오늘 공개!'; }
+    var LANGS = ['ko','en','es','zh'];
+
+    // 언어 전환: data-en/data-es/data-zh 속성이 있는 요소의 내용을 교체 (ko는 원본 복원)
+    var nodes = [];
+    document.querySelectorAll('[data-en],[data-es],[data-zh]').forEach(function(el){
+      el.setAttribute('data-ko', el.innerHTML);
+      nodes.push(el);
     });
+
+    function setLang(l){
+      if (LANGS.indexOf(l) < 0) l = 'ko';
+      nodes.forEach(function(el){
+        var t = el.getAttribute('data-' + l) || el.getAttribute('data-ko');
+        el.innerHTML = t;
+      });
+      document.documentElement.lang = (l === 'zh') ? 'zh-CN' : l;
+      document.querySelectorAll('.lang button').forEach(function(b){
+        b.classList.toggle('on', b.getAttribute('data-lang') === l);
+      });
+      try { localStorage.setItem('lang', l); } catch(e) {}
+      applyBadges(l);
+    }
+
+    // 공개 예정 배지: 30일 이내면 D-day 표시
+    var BADGE = {
+      ko: function(d){ return d === 0 ? '오늘 공개!' : 'D-' + d; },
+      en: function(d){ return d === 0 ? 'Out today!' : 'D-' + d; },
+      es: function(d){ return d === 0 ? '¡Hoy!' : 'D-' + d; },
+      zh: function(d){ return d === 0 ? '今日上线!' : 'D-' + d; }
+    };
+    function applyBadges(l){
+      var today = new Date(); today.setHours(0,0,0,0);
+      document.querySelectorAll('.badge.soon[data-date]').forEach(function(b){
+        if (!b.getAttribute('data-orig')) b.setAttribute('data-orig', b.textContent);
+        var d = new Date(b.getAttribute('data-date') + 'T00:00:00');
+        var diff = Math.round((d - today) / 86400000);
+        if (diff >= 0 && diff <= 30) b.textContent = BADGE[l](diff);
+        else b.textContent = b.getAttribute('data-orig');
+      });
+    }
+
+    document.querySelectorAll('.lang button').forEach(function(b){
+      b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang')); });
+    });
+
+    var saved = null;
+    try { saved = localStorage.getItem('lang'); } catch(e) {}
+    if (!saved) {
+      var nav = (navigator.language || 'ko').toLowerCase();
+      if (nav.indexOf('en') === 0) saved = 'en';
+      else if (nav.indexOf('es') === 0) saved = 'es';
+      else if (nav.indexOf('zh') === 0) saved = 'zh';
+      else saved = 'ko';
+    }
+    setLang(saved);
   })();
 </script>
 </body>
