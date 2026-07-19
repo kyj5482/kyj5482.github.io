@@ -13,6 +13,8 @@ layout: null
   <meta property="og:url" content="https://kyj5482.github.io">
   <meta property="og:type" content="website">
   <link rel="icon" href="/assets/img/favicons/favicon-32x32.png">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
   <style>
     :root{
       --bg:#0a0e14; --bg2:#0f1520; --card:#141b28; --line:#1f2937;
@@ -462,6 +464,23 @@ layout: null
       else saved = 'ko';
     }
     setLang(saved);
+
+    // 새 배포 감지 시 자동 새로고침: 캐시된 옛 페이지가 계속 보이는 문제 방지.
+    // version.json(항상 no-store로 조회)의 빌드 버전이 이 페이지의 버전과 다르면 1회 리로드.
+    var BUILD_V = '{{ site.time | date: "%s" }}';
+    function checkVersion(){
+      fetch('/version.json?_=' + Date.now(), { cache: 'no-store' })
+        .then(function(r){ return r.json(); })
+        .then(function(j){
+          if (j.v && j.v !== BUILD_V) {
+            var k = 'reloaded_' + j.v;
+            if (!sessionStorage.getItem(k)) { sessionStorage.setItem(k, '1'); location.reload(); }
+          }
+        })
+        .catch(function(){});
+    }
+    checkVersion();
+    document.addEventListener('visibilitychange', function(){ if (!document.hidden) checkVersion(); });
   })();
 </script>
 </body>
