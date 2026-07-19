@@ -64,7 +64,7 @@ google_analytics:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-theme_mode: # [light|dark]
+theme_mode: dark # [light|dark] — 랜딩 페이지와 톤 통일 (다크 고정)
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
@@ -74,8 +74,8 @@ theme_mode: # [light|dark]
 #img_cdn: "https://kyj5482.github.io"
 
 # the avatar on sidebar, support local or CORS resources
-# TODO: 프로필 사진 촬영 후 /assets/img/avatar.jpg 로 교체 (_branding/05-checklist.md)
-avatar: ""
+# TODO: 프로필 사진 촬영 후 교체 (_branding/05-checklist.md) — 임시로 사이트 일러스트 사용
+avatar: "/assets/img/developer.png"
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
