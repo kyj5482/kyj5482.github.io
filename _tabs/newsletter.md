@@ -14,9 +14,9 @@ order: 3
 
 ### 구독하기
 
-아래 메일 주소로 **"구독"** 이라고 한 줄만 보내주세요. 첫 호부터 보내드립니다.
+📮 **[maily.so/solostartup](https://maily.so/solostartup)** 에서 이메일만 입력하면 됩니다.
 
-📮 **[kyj5482@gmail.com](mailto:kyj5482@gmail.com?subject=뉴스레터%20구독)**
+이메일로 신청하셔도 됩니다: [kyj5482@gmail.com](mailto:kyj5482@gmail.com?subject=뉴스레터%20구독)
 
-> 뉴스레터는 [Maily](https://maily.so)를 통해 발송됩니다.
-> 광고 없이, 격주 1회만 보내며, 언제든 회신 한 번으로 구독 취소할 수 있습니다.
+> 격주 금요일 아침(한국 시간), 월 2회만 보냅니다.
+> 광고 없이, 언제든 클릭 한 번으로 구독 취소할 수 있습니다. 답장은 발행인이 직접 읽습니다.
