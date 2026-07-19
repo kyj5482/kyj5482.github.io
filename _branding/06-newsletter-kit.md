@@ -94,9 +94,9 @@
 5. **다음 예고**: 발행 캘린더 (04 문서 참조)
 6. **클로징 질문**: "아이 운동, 가장 큰 고민이 뭔가요?" (답장 유도)
 
-## 7. Maily 개설 후 에이전트 작업 (URL 받으면 바로)
+## 7. Maily 개설 후 작업 — 주소 확정: **maily.so/solostartup**
 
-- [ ] 홈페이지(index.html) 뉴스레터 버튼 3곳 href를 Maily 구독 URL로 교체
-- [ ] Newsletter 탭(_tabs/newsletter.md) 구독 버튼 교체
-- [ ] swim.capsule 사이트에 구독 링크 추가
-- [ ] 환영 메일(위 4번)을 Maily 자동 발송으로 등록
+- [x] 홈페이지(index.html) 뉴스레터 버튼 href를 Maily 구독 URL로 교체 (히어로·하단 섹션)
+- [x] Newsletter 탭(_tabs/newsletter.md) 구독 버튼 교체
+- [ ] swim.capsule 사이트에 구독 링크 추가 (요청 시 진행)
+- [ ] 환영 메일(위 4번)을 Maily 자동 발송으로 등록 (**본인이 Maily 설정에서**)
