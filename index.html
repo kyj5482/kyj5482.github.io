@@ -1,4 +1,339 @@
 ---
-layout: home
-# Index page
+layout: null
 ---
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1인 스타트업 — 생각은 내가, 완성은 AI가</title>
+  <meta name="description" content="20년차 플랫폼 개발자이자 한·미 수영 선수 두 아이의 아빠. AI 에이전트와 함께 글·영상·앱을 만드는 전 과정을 공개합니다.">
+  <meta property="og:title" content="1인 스타트업 — 생각은 내가, 완성은 AI가">
+  <meta property="og:description" content="20년차 플랫폼 개발자 + 한·미 수영 선수 부모. AI 에이전트로 만드는 1인 스타트업 실험을 전부 공개합니다.">
+  <meta property="og:url" content="https://kyj5482.github.io">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/assets/img/favicons/favicon-32x32.png">
+  <style>
+    :root{
+      --bg:#0a0e14; --bg2:#0f1520; --card:#141b28; --line:#1f2937;
+      --txt:#e8edf4; --sub:#94a3b8; --accent:#38bdf8; --accent2:#818cf8;
+      --dev1:#4f46e5; --dev2:#7c3aed; --swim1:#0891b2; --swim2:#06b6d4;
+      --bip1:#d97706; --bip2:#f59e0b; --live:#34d399;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--txt);font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+    /* header */
+    header{position:sticky;top:0;z-index:50;background:rgba(10,14,20,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;gap:20px;height:60px}
+    .logo{font-weight:800;font-size:1.05rem;letter-spacing:-.02em;white-space:nowrap}
+    .logo em{font-style:normal;color:var(--accent)}
+    .nav-links{display:flex;gap:16px;margin-left:auto;font-size:.9rem;color:var(--sub);overflow-x:auto;scrollbar-width:none}
+    .nav-links::-webkit-scrollbar{display:none}
+    .nav-links a{white-space:nowrap;padding:6px 2px}
+    .nav-links a:hover{color:var(--txt)}
+    .btn{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#081018;font-weight:700;padding:9px 18px;border-radius:999px;font-size:.9rem;white-space:nowrap;transition:transform .15s ease,box-shadow .15s ease}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(56,189,248,.35)}
+    .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+    .btn.ghost:hover{border-color:var(--accent);box-shadow:none}
+
+    /* hero */
+    .hero{position:relative;padding:72px 0 40px;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;background:
+      radial-gradient(600px 300px at 15% 0%,rgba(79,70,229,.28),transparent 70%),
+      radial-gradient(700px 340px at 85% 10%,rgba(8,145,178,.25),transparent 70%);pointer-events:none}
+    .eyebrow{color:var(--accent);font-weight:700;font-size:.95rem;letter-spacing:.06em}
+    .hero h1{font-size:clamp(1.9rem,5vw,3.2rem);font-weight:900;letter-spacing:-.03em;line-height:1.2;margin:10px 0 16px}
+    .hero p.lead{color:var(--sub);font-size:clamp(1rem,2.2vw,1.15rem);max-width:640px}
+    .hero .cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:44px 0 0}
+    .stat{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+    .stat b{display:block;font-size:1.25rem;letter-spacing:-.02em}
+    .stat span{color:var(--sub);font-size:.82rem}
+
+    /* sections & rails */
+    section{padding:44px 0 8px}
+    .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px}
+    .sec-head h2{font-size:1.35rem;font-weight:800;letter-spacing:-.02em}
+    .sec-head .more{margin-left:auto;color:var(--sub);font-size:.85rem}
+    .sec-head .more:hover{color:var(--accent)}
+    .sec-sub{color:var(--sub);font-size:.92rem;margin:-10px 0 16px}
+    .rail{display:flex;gap:14px;overflow-x:auto;padding:4px 4px 18px;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+    .card{flex:0 0 240px;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .18s ease,border-color .18s ease}
+    .card:hover{transform:translateY(-4px) scale(1.015);border-color:#334155}
+    .thumb{height:130px;display:flex;align-items:center;justify-content:center;font-size:2.6rem;position:relative}
+    .thumb.dev{background:linear-gradient(135deg,var(--dev1),var(--dev2))}
+    .thumb.swim{background:linear-gradient(135deg,var(--swim1),var(--swim2))}
+    .thumb.bip{background:linear-gradient(135deg,var(--bip1),var(--bip2))}
+    .thumb.now{background:linear-gradient(135deg,#1e293b,#334155)}
+    .ep{position:absolute;left:12px;top:10px;font-size:.72rem;font-weight:800;color:rgba(255,255,255,.85);letter-spacing:.08em}
+    .badge{position:absolute;right:10px;top:10px;font-size:.7rem;font-weight:800;padding:4px 9px;border-radius:999px;background:rgba(0,0,0,.45);color:#fff;backdrop-filter:blur(4px)}
+    .badge.live{background:var(--live);color:#052015}
+    .badge.soon{background:rgba(0,0,0,.55);color:#fbbf24}
+    .card-body{padding:14px 15px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+    .card-body h3{font-size:.98rem;font-weight:700;line-height:1.35;letter-spacing:-.01em}
+    .card-body p{color:var(--sub);font-size:.82rem;flex:1}
+    .card-date{font-size:.78rem;color:var(--accent);font-weight:700}
+
+    /* timeline */
+    .tl{position:relative;margin:8px 0 20px;padding-left:26px;border-left:2px solid var(--line)}
+    .tl-item{position:relative;padding:0 0 26px 16px}
+    .tl-item::before{content:"";position:absolute;left:-34px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+    .tl-item.swim::before{border-color:var(--swim2)}
+    .tl-item.future::before{border-color:var(--bip2);border-style:solid;background:var(--bg2)}
+    .tl-item time{display:block;font-size:.8rem;font-weight:800;color:var(--accent);letter-spacing:.03em}
+    .tl-item.swim time{color:var(--swim2)}
+    .tl-item.future time{color:var(--bip2)}
+    .tl-item h3{font-size:1.02rem;font-weight:700;margin:2px 0}
+    .tl-item p{color:var(--sub);font-size:.88rem;max-width:640px}
+    .tl-item .chip{display:inline-block;font-size:.72rem;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:2px 10px;margin-top:6px;color:var(--sub)}
+    .tl-item.done .chip{border-color:var(--live);color:var(--live)}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+    @media(max-width:860px){.two-col{grid-template-columns:1fr}}
+
+    /* newsletter */
+    .news{margin:56px 0;background:linear-gradient(135deg,rgba(56,189,248,.12),rgba(129,140,248,.12));border:1px solid #1e3a5f;border-radius:22px;padding:40px 32px;text-align:center}
+    .news h2{font-size:clamp(1.3rem,3vw,1.7rem);font-weight:800;letter-spacing:-.02em}
+    .news p{color:var(--sub);max-width:560px;margin:10px auto 22px}
+    .news small{display:block;color:var(--sub);margin-top:14px;font-size:.78rem}
+
+    footer{border-top:1px solid var(--line);padding:30px 0 44px;color:var(--sub);font-size:.85rem}
+    .foot{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+    .foot .links{display:flex;gap:14px;margin-left:auto}
+    .foot a:hover{color:var(--accent)}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/">1인 스타트업<em>.</em></a>
+    <nav class="nav-links">
+      <a href="#now">콘텐츠</a>
+      <a href="#story">스토리</a>
+      <a href="#history">걸어온 길</a>
+      <a href="#roadmap">앞으로의 일정</a>
+      <a href="/archives/">블로그</a>
+    </nav>
+    <a class="btn" href="#newsletter">뉴스레터 구독</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">SOLO STARTUP · BUILD IN PUBLIC</div>
+    <h1>생각은 내가,<br>완성은 AI가.</h1>
+    <p class="lead">
+      20년차 플랫폼 개발자이자 한국과 미국에서 수영 선수 두 아이를 키우는 아빠입니다.
+      AI 에이전트와 함께 글·영상·앱을 만드는 1인 스타트업 실험 — 그 전 과정을 여기서 공개합니다.
+    </p>
+    <div class="cta">
+      <a class="btn" href="#newsletter">새 콘텐츠를 메일로 받기</a>
+      <a class="btn ghost" href="#story">스토리 먼저 보기</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>20+년</b><span>삼성·현대차·기아 플랫폼 개발</span></div>
+      <div class="stat"><b>4개국</b><span>커넥티드카 플랫폼 글로벌 런칭</span></div>
+      <div class="stat"><b>앱 4개</b><span>수영 앱 스택 Build in Public</span></div>
+      <div class="stat"><b>2개국 메달</b><span>한·미 수영 선수 두 아이와 함께</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="now">
+  <div class="wrap">
+    <div class="sec-head"><h2>🎬 지금 바로 볼 수 있어요</h2><a class="more" href="/archives/">전체 보기 →</a></div>
+    <div class="rail">
+      <a class="card" href="/posts/%ED%8D%BC%EC%8A%A4%EB%84%90-%EB%B8%8C%EB%9E%9C%EB%94%A9%EC%9D%84-%EC%8B%9C%EC%9E%91%ED%95%A9%EB%8B%88%EB%8B%A4/">
+        <div class="thumb now">🚀<span class="badge live">NEW</span></div>
+        <div class="card-body"><h3>생각은 내가, 완성은 AI가 — 시작 선언</h3><p>2년 멈췄던 블로그를 다시 켠 이유, 그리고 앞으로의 계획.</p><span class="card-date">공개됨 · 2026.07.18</span></div>
+      </a>
+      <a class="card" href="https://kyj5482.github.io/swim.capsule/">
+        <div class="thumb swim">🌊<span class="badge live">LIVE</span></div>
+        <div class="card-body"><h3>SWIM CAPSULE — 두 선수의 타임캡슐</h3><p>과천에서 어바인까지, 대회 기록·기사·영상을 원본 그대로 보관하는 아카이브.</p><span class="card-date">운영 중 · 한/영</span></div>
+      </a>
+      <a class="card" href="/projects/">
+        <div class="thumb bip">🛠<span class="badge live">LIVE</span></div>
+        <div class="card-body"><h3>수영 앱 4종 프로젝트</h3><p>swim.meets · swim.capsule · SwimVault · SplitLane — 전부 GitHub 공개 개발.</p><span class="card-date">코드 공개 중</span></div>
+      </a>
+      <a class="card" href="/about/">
+        <div class="thumb dev">👋<span class="badge live">LIVE</span></div>
+        <div class="card-body"><h3>이 사람은 누구인가</h3><p>삼성 10년, 현대차·기아 10년, 그리고 두 아이의 수영. 3분 소개.</p><span class="card-date">About</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap">
+    <div class="sec-head"><h2>💻 개발자 스토리</h2></div>
+    <p class="sec-sub">대기업 안에서 스타트업처럼 — 소수 인원으로 0→1 플랫폼을 글로벌 양산까지 밀어붙인 이야기. 매주 월요일 공개.</p>
+    <div class="rail">
+      <div class="card">
+        <div class="thumb dev"><span class="ep">EP.1</span>✍️<span class="badge soon" data-date="2026-07-27">7/27 공개</span></div>
+        <div class="card-body"><h3>나는 더 이상 글을 직접 쓰지 않는다</h3><p>생각은 내가, 완성은 에이전트가 — 이 블로그가 만들어지는 방식.</p><span class="card-date">2026.07.27 (월)</span></div>
+      </div>
+      <div class="card">
+        <div class="thumb dev"><span class="ep">EP.2</span>🤖<span class="badge soon" data-date="2026-08-10">8/10 공개</span></div>
+        <div class="card-body"><h3>카이스트 드라마를 보고 로봇축구를 시작한 아이</h3><p>거제도 소년이 세계대회 무대에 서기까지.</p><span class="card-date">2026.08.10 (월)</span></div>
+      </div>
+      <div class="card">
+        <div class="thumb dev"><span class="ep">EP.3</span>🌙<span class="badge soon" data-date="2026-08-31">8/31 공개</span></div>
+        <div class="card-body"><h3>새벽 3시 출근이 남긴 것</h3><p>6개월 만에 3개 브랜드 글로벌 계정을 통합한 대가와 배움.</p><span class="card-date">2026.08.31 (월)</span></div>
+      </div>
+      <div class="card">
+        <div class="thumb dev"><span class="ep">EP.4</span>🚗<span class="badge soon" data-date="2026-09-14">9/14 공개</span></div>
+        <div class="card-body"><h3>3명이 커넥티드카 플랫폼으로 4개국을 런칭한 방법</h3><p>백업 플랜 없이 유럽→한국→중국→인도.</p><span class="card-date">2026.09.14 (월)</span></div>
+      </div>
+      <div class="card">
+        <div class="thumb dev"><span class="ep">EP.5</span>📡<span class="badge soon" data-date="2026-09-28">9/28 공개</span></div>
+        <div class="card-body"><h3>AI가 대체하는 것과 대체하지 못하는 것</h3><p>20년차 개발자의 관점.</p><span class="card-date">2026.09.28 (월)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2>🏊 수영 부모 스토리</h2></div>
+    <p class="sec-sub">한국 2년 + 미국 2년, 선수 아이 둘을 키운 부모의 실전 기록. 격주 일요일 공개.</p>
+    <div class="rail">
+      <div class="card">
+        <div class="thumb swim"><span class="ep">EP.1</span>👶<span class="badge soon" data-date="2026-08-03">8/3 공개</span></div>
+        <div class="card-body"><h3>아이 수영, 몇 살부터 시작해야 할까</h3><p>영어유치원 대신 유아체능단을 선택한 이유.</p><span class="card-date">2026.08.03 (월)</span></div>
+      </div>
+      <div class="card">
+        <div class="thumb swim"><span class="ep">EP.2</span>💪<span class="badge soon" data-date="2026-08-17">8/17 공개</span></div>
+        <div class="card-body"><h3>물을 무서워하던 딸이 경기도대표가 되기까지</h3><p>발차기부터 다시 시작한 성장의 기록.</p><span class="card-date">2026.08.17 (월)</span></div>
+      </div>
+      <div class="card">
+        <div class="thumb swim"><span class="ep">EP.3</span>🇰🇷🇺🇸<span class="badge soon" data-date="2026-09-07">9/7 공개</span></div>
+        <div class="card-body"><h3>한국 훈련 vs 미국 훈련</h3><p>두 나라를 모두 겪은 부모가 본 결정적 차이.</p><span class="card-date">2026.09.07 (월)</span></div>
+      </div>
+      <div class="card">
+        <div class="thumb swim"><span class="ep">EP.4</span>🥉<span class="badge soon" data-date="2026-09-21">9/21 공개</span></div>
+        <div class="card-body"><h3>첫 대회 9위, 결승 탈락 — 그날 해준 말</h3><p>그리고 주종목이 아닌 종목으로 딴 첫 전국 메달.</p><span class="card-date">2026.09.21 (월)</span></div>
+      </div>
+      <div class="card">
+        <div class="thumb swim"><span class="ep">SHORTS</span>🎥<span class="badge soon" data-date="2026-10-05">10월 시작</span></div>
+        <div class="card-body"><h3>유튜브 쇼츠 — 아이 수영 1분 상식</h3><p>글로 쌓은 이야기를 1분 영상 시리즈로.</p><span class="card-date">2026.10 첫 공개</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2>🛠 Build in Public — 수영 앱이 만들어지는 과정</h2><a class="more" href="/projects/">프로젝트 전체 →</a></div>
+    <p class="sec-sub">개발자 아빠가 AI 에이전트와 함께 수영 앱을 만듭니다. 잘 되는 것도, 안 되는 것도 그대로 공개합니다.</p>
+    <div class="rail">
+      <a class="card" href="https://github.com/kyj5482/swim.meet.timer">
+        <div class="thumb bip">⏱<span class="badge live">개발 중</span></div>
+        <div class="card-body"><h3>SplitLane — 출시 1순위</h3><p>수영 타이머+기록(무료)에서 AI 코치 분석(구독)으로 성장하는 앱.</p><span class="card-date">2027 상반기 스토어 출시 목표</span></div>
+      </a>
+      <div class="card">
+        <div class="thumb bip"><span class="ep">일지 #1</span>📓<span class="badge soon" data-date="2026-08-24">8/24 공개</span></div>
+        <div class="card-body"><h3>수영 선수 아빠가 앱을 4개나 만든 이유</h3><p>Build in Public 개발 일지, 월 1회 연재 시작.</p><span class="card-date">2026.08.24 (월)</span></div>
+      </div>
+      <a class="card" href="https://github.com/kyj5482/swim.meets">
+        <div class="thumb bip">📋<span class="badge live">운영 중</span></div>
+        <div class="card-body"><h3>swim.meets</h3><p>수천 명 출전표에서 우리 아이 기록만 자동 추출. 매 대회 실사용 중.</p><span class="card-date">GitHub 공개</span></div>
+      </a>
+      <a class="card" href="https://github.com/kyj5482/swim.meet.portfolio">
+        <div class="thumb bip">📸<span class="badge live">설계 공개</span></div>
+        <div class="card-body"><h3>SwimVault</h3><p>결과지 사진 한 장 → AI 추출 → 평생 수영 기록부.</p><span class="card-date">GitHub 공개</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="history">
+  <div class="wrap">
+    <div class="sec-head"><h2>🧭 걸어온 길</h2></div>
+    <p class="sec-sub">이 실험은 하루아침에 나온 게 아닙니다 — 20년의 기록입니다.</p>
+    <div class="two-col">
+      <div>
+        <div class="tl">
+          <div class="tl-item"><time>1990s</time><h3>거제도, 코딩을 만나다</h3><p>초등학생 때 알고리즘을 배우고, 고등학교 홈페이지를 만들며 개발자의 길을 시작.</p></div>
+          <div class="tl-item"><time>대학 ~ 대학원</time><h3>로봇축구, 세계 무대까지</h3><p>카이스트 드라마를 보고 시작한 로봇축구로 전국대회를 넘어 세계대회 입상.</p></div>
+          <div class="tl-item"><time>2006</time><h3>홀로 떠난 미국 20일</h3><p>스마트폰도 지도도 없이 대중교통으로 서부를 횡단. 세상을 보는 눈이 바뀐 첫 여행.</p></div>
+          <div class="tl-item"><time>2007 ~ 2016</time><h3>삼성 10년 — 플랫폼의 기본기</h3><p>소프트웨어멤버십 4년, 종합기술원에서 타이젠 Convergence Platform. 모바일·TV·가전 양산 E2E, 매년 논문·특허.</p></div>
+          <div class="tl-item"><time>2017</time><h3>현대차 이직 — 6개월의 전설</h3><p>사실상 1인 개발로 3개 브랜드 글로벌 통합 계정을 6개월 만에 런칭. 새벽 3시 출근의 시절.</p></div>
+          <div class="tl-item"><time>2017 ~ 2018</time><h3>커넥티드카 플랫폼, 3명이 4개국</h3><p>API G/W부터 앱 서버까지 3명이 만들어 유럽·한국·중국·인도 런칭과 운영까지.</p></div>
+          <div class="tl-item"><time>~ 2023</time><h3>Vehicle Twin — 차와 서버를 잇다</h3><p>실리콘밸리에서 설계한 디지털 트윈으로 원격진단 서비스 실현.</p></div>
+          <div class="tl-item"><time>2024 ~</time><h3>미국 주재원 — 데이터를 비즈니스로</h3><p>기아 북미 빅데이터센터 정상화, 수집 비용 구조 개선, AI 마이크로앱을 1일 1앱으로 출시하는 프로세스 구축.</p></div>
+        </div>
+      </div>
+      <div>
+        <div class="tl">
+          <div class="tl-item swim"><time>유치원</time><h3>수영과의 첫 만남</h3><p>영어유치원 대신 유아체능단. 1년 만에 동네 대회 입상.</p></div>
+          <div class="tl-item swim"><time>초등학교</time><h3>선수 등록, 그리고 첫 9위</h3><p>첫 공식 대회 결승 탈락의 속상함이 성장의 시작이 되다.</p></div>
+          <div class="tl-item swim"><time>한국 2년</time><h3>전국 메달, 두 아이 모두</h3><p>아들은 접영 전국 3위, 딸은 생활체육 경기도대표. 대회 원정마다 지역의 맛과 경험을 선물로.</p></div>
+          <div class="tl-item swim"><time>미국 2년</time><h3>미국 전국 8위</h3><p>완전히 다른 훈련 문화에 적응하며 양국 메달리스트로 성장.</p></div>
+          <div class="tl-item swim"><time>2026 ~</time><h3>기록을 자산으로</h3><p>이 모든 경험을 콘텐츠와 앱으로 — 아이들의 미래 퍼스널 브랜딩 자산까지.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <div class="wrap">
+    <div class="sec-head"><h2>🗓 앞으로의 일정</h2></div>
+    <p class="sec-sub">언제 무엇이 나오는지 미리 알려드립니다. 매번 확인하러 오지 않아도, 뉴스레터가 알려드립니다.</p>
+    <div class="tl">
+      <div class="tl-item done"><time>2026.07</time><h3>블로그 재가동 + 시작 선언</h3><p>퍼스널 브랜딩 시스템 구축, 첫 글 발행.</p><span class="chip">✓ 완료</span></div>
+      <div class="tl-item future"><time>2026.07 ~</time><h3>매주 월요일, 새 글 1편</h3><p>개발자 스토리와 수영 부모 스토리를 격주로 교차 연재.</p><span class="chip">진행 중</span></div>
+      <div class="tl-item future"><time>2026.08</time><h3>뉴스레터 창간호 (Maily)</h3><p>격주 발행 — 새 글 요약, 앱 개발 진행 상황, 다음 콘텐츠 예고.</p><span class="chip">예정</span></div>
+      <div class="tl-item future"><time>2026.10</time><h3>유튜브 쇼츠 시작</h3><p>"아이 수영 1분 상식"부터 파일럿 10편.</p><span class="chip">예정</span></div>
+      <div class="tl-item future"><time>2026 Q4 ~ 2027 H1</time><h3>SplitLane 무료 앱 출시</h3><p>수영 타이머+기록 앱, TestFlight/Play 테스트를 거쳐 스토어 배포.</p><span class="chip">예정</span></div>
+      <div class="tl-item future"><time>2027 H2</time><h3>SplitLane AI 코치 (구독) + 첫 수익 실험</h3><p>표준기록 대비 성장 분석. 결과 숫자는 그대로 공개.</p><span class="chip">예정</span></div>
+      <div class="tl-item future"><time>2028</time><h3>확산의 해</h3><p>2년의 실험 결과를 숫자와 함께 총결산.</p><span class="chip">예정</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="newsletter">
+  <div class="wrap">
+    <div class="news">
+      <h2>📮 매번 들어와서 확인하지 마세요</h2>
+      <p>새 글·쇼츠·앱 소식이 나오면 2주에 한 번, 메일 한 통으로 정리해 보내드립니다.
+        광고 없이, 언제든 회신 한 번으로 구독 취소.</p>
+      <!-- Maily 구독 페이지 개설 후 href를 maily.so 주소로 교체 -->
+      <a class="btn" href="mailto:kyj5482@gmail.com?subject=뉴스레터%20구독&body=구독합니다!">이메일로 구독 신청하기</a>
+      <small>메일 제목 그대로 보내주시면 됩니다 · Maily 구독 페이지 오픈 준비 중</small>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Yongjin Kim · 1인 스타트업</span>
+    <div class="links">
+      <a href="https://github.com/kyj5482">GitHub</a>
+      <a href="https://www.linkedin.com/in/youthkim">LinkedIn</a>
+      <a href="/archives/">Blog</a>
+      <a href="/about/">About</a>
+      <a href="mailto:kyj5482@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // 공개 예정 배지에 D-day 표시
+  (function(){
+    var today = new Date(); today.setHours(0,0,0,0);
+    document.querySelectorAll('.badge.soon[data-date]').forEach(function(b){
+      var d = new Date(b.getAttribute('data-date') + 'T00:00:00');
+      var diff = Math.round((d - today) / 86400000);
+      if (diff > 0 && diff <= 30) { b.textContent = 'D-' + diff; }
+      else if (diff === 0) { b.textContent = '오늘 공개!'; }
+    });
+  })();
+</script>
+</body>
+</html>

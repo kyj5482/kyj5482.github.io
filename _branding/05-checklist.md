@@ -13,7 +13,8 @@
   - 예시 A: `Platform Engineer (20+ yrs, Samsung→Hyundai→Kia) | Building with AI Agents | Solo Startup in Public`
   - 예시 B: `Vehicle Data Platform @ Kia US | 20 yrs building 0→1 platforms | AI-native solo builder`
 - [x] **뉴스레터 플랫폼 선택**: ✅ **Maily 확정** (2026-07). 블로그 Newsletter 탭 + 이메일 구독 CTA 배치 완료
-- [ ] **Maily 계정 개설**: maily.so 가입 → 구독 페이지 URL을 전달하면 에이전트가 Newsletter 탭·swim.capsule 사이트에 연결. 그전까지는 이메일("구독" 회신)로 리스트 수집
+- [ ] **Maily 계정 개설**: maily.so 가입 → 구독 페이지 URL을 전달하면 에이전트가 홈페이지·Newsletter 탭·swim.capsule 사이트에 연결. 그전까지는 이메일("구독" 회신)로 리스트 수집
+  - 추천 이름/주소 (가입 시 가용성 확인, 1순위부터): ① **1인 스타트업** / `maily.so/solostartup` ② `maily.so/onestartup` ③ **솔로빌더** / `maily.so/solobuilder` ④ **빌드로그** / `maily.so/buildlog`
 - [ ] **X(트위터) 유지 여부 결정**: _config.yml에 계정 연결돼 있음. 운영 안 할 거면 링크 정리
 
 ## Phase 1 진입 전 (~2026.12)
