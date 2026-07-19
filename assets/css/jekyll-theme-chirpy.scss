@@ -4,3 +4,25 @@
 @import 'main';
 
 /* append your custom style below */
+
+/* 랜딩 페이지와 톤 통일: 다크 배경·시안 액센트 (index.html의 --bg/--accent와 동일 계열) */
+html[data-mode='dark'],
+html:not([data-mode]) {
+  --main-bg: #0a0e14;
+  --sidebar-bg: #0f1520;
+  --topbar-bg: rgba(10, 14, 20, 0.82);
+  --card-bg: #141b28;
+  --btn-border-color: #1f2937;
+  --link-color: #38bdf8;
+  --link-underline-color: #1e3a5f;
+  --site-title-color: #e8edf4;
+  --site-subtitle-color: #94a3b8;
+  --sidebar-active-color: #38bdf8;
+  --sidebar-hover-bg: #141b28;
+  --main-border-color: #1f2937;
+  --card-border-color: #1f2937;
+  --btn-backtotop-color: #38bdf8;
+  --toc-highlight: #38bdf8;
+  --tag-hover: #1e3a5f;
+  --search-tag-bg: #141b28;
+}

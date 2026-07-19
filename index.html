@@ -108,6 +108,36 @@ layout: null
     .news small{display:block;color:var(--sub);margin-top:14px;font-size:.78rem}
     .news small a{text-decoration:underline}
 
+    /* mind map explorer */
+    .mm-wrap{position:relative;height:640px;margin:6px 0 10px}
+    .mm-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+    .mm-svg line{stroke:#243044;stroke-width:1.5}
+    .mm-svg line.x{stroke:#3b3054;stroke-dasharray:5 6;stroke-width:1.2}
+    .mm-node{position:absolute;transform:translate(-50%,-50%);background:var(--card);border:1.5px solid var(--line);color:var(--txt);border-radius:999px;padding:7px 14px;font-size:.82rem;font-weight:700;font-family:inherit;cursor:pointer;white-space:nowrap;transition:transform .15s ease,border-color .15s,box-shadow .15s;z-index:2}
+    .mm-node:hover{transform:translate(-50%,-50%) scale(1.07)}
+    .mm-node.g-dev{border-color:#4f46e5}.mm-node.g-swim{border-color:#06b6d4}.mm-node.g-build{border-color:#f59e0b}.mm-node.g-startup{border-color:#34d399}
+    .mm-node.hub{font-size:.9rem;padding:9px 18px}
+    .mm-node.g-dev.hub{background:rgba(79,70,229,.18)}.mm-node.g-swim.hub{background:rgba(6,182,212,.15)}.mm-node.g-build.hub{background:rgba(245,158,11,.14)}.mm-node.g-startup.hub{background:rgba(52,211,153,.13)}
+    .mm-node.center{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#081018;font-size:1rem;padding:13px 22px;border:0;box-shadow:0 8px 30px rgba(56,189,248,.35)}
+    .mm-node.active{border-color:var(--accent);box-shadow:0 0 0 3px rgba(56,189,248,.28)}
+    .mm-clusters{display:none}
+    .mm-panel{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:26px 26px 22px;margin-top:6px}
+    .mm-panel .mp-group{font-size:.75rem;font-weight:800;letter-spacing:.08em;color:var(--sub)}
+    .mm-panel h3{font-size:1.25rem;font-weight:800;letter-spacing:-.02em;margin:4px 0 2px}
+    .mm-panel .mp-hook{color:var(--accent);font-weight:700;font-size:.98rem;margin-bottom:10px}
+    .mm-panel .mp-story{color:var(--sub);font-size:.95rem;max-width:760px;margin-bottom:14px}
+    .mm-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .mm-chips .lbl{color:var(--sub);font-size:.78rem;font-weight:700;align-self:center;margin-right:2px}
+    .mm-chip{border:1px solid var(--line);border-radius:999px;padding:5px 13px;font-size:.8rem;font-weight:600;color:var(--txt);background:none;cursor:pointer;font-family:inherit;transition:border-color .15s}
+    .mm-chip:hover{border-color:var(--accent);color:var(--accent)}
+    a.mm-chip{background:rgba(56,189,248,.1);border-color:#1e3a5f;color:var(--accent)}
+    @media(max-width:900px){
+      .mm-wrap{display:none}
+      .mm-clusters{display:flex;flex-direction:column;gap:14px;margin:6px 0 14px}
+      .mm-cluster b{display:block;font-size:.85rem;color:var(--sub);margin-bottom:8px}
+      .mm-cluster .row{display:flex;flex-wrap:wrap;gap:8px}
+    }
+
     footer{border-top:1px solid var(--line);padding:30px 0 44px;color:var(--sub);font-size:.85rem}
     .foot{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
     .foot .links{display:flex;gap:14px;margin-left:auto}
@@ -122,7 +152,7 @@ layout: null
     <nav class="nav-links">
       <a href="#now" data-en="Content" data-es="Contenido" data-zh="内容">콘텐츠</a>
       <a href="#story" data-en="Story" data-es="Historia" data-zh="故事">스토리</a>
-      <a href="#history" data-en="Journey" data-es="Trayectoria" data-zh="成长历程">걸어온 길</a>
+      <a href="#history" data-en="Explore me" data-es="Explórame" data-zh="探索地图">탐구 지도</a>
       <a href="#roadmap" data-en="Roadmap" data-es="Calendario" data-zh="发布计划">앞으로의 일정</a>
       <a href="/archives/" data-en="Blog" data-es="Blog" data-zh="博客">블로그</a>
     </nav>
@@ -161,8 +191,16 @@ layout: null
   <div class="wrap">
     <div class="sec-head"><h2 data-en="🎬 Watch right now" data-es="🎬 Disponible ahora" data-zh="🎬 现在就能看">🎬 지금 바로 볼 수 있어요</h2><a class="more" href="/archives/" data-en="View all →" data-es="Ver todo →" data-zh="查看全部 →">전체 보기 →</a></div>
     <div class="rail">
+      <a class="card" href="/posts/나는-더-이상-글을-직접-쓰지-않는다/">
+        <div class="thumb dev">✍️<span class="badge live">NEW</span></div>
+        <div class="card-body">
+          <h3 data-en="I don't write my own posts anymore" data-es="Ya no escribo mis propios textos" data-zh="我不再亲自写文章了">나는 더 이상 글을 직접 쓰지 않는다</h3>
+          <p data-en="How this blog gets made: my thinking, the agent's execution." data-es="Cómo se hace este blog: mi pensamiento, la ejecución del agente." data-zh="这个博客的制作方式：我思考，智能体执行。">생각은 내가, 완성은 에이전트가 — 이 블로그가 만들어지는 방식.</p>
+          <span class="card-date" data-en="Published · 2026.07.19" data-es="Publicado · 2026.07.19" data-zh="已发布 · 2026.07.19">공개됨 · 2026.07.19</span>
+        </div>
+      </a>
       <a class="card" href="/posts/%ED%8D%BC%EC%8A%A4%EB%84%90-%EB%B8%8C%EB%9E%9C%EB%94%A9%EC%9D%84-%EC%8B%9C%EC%9E%91%ED%95%A9%EB%8B%88%EB%8B%A4/">
-        <div class="thumb now">🚀<span class="badge live">NEW</span></div>
+        <div class="thumb now">🚀<span class="badge live">LIVE</span></div>
         <div class="card-body">
           <h3 data-en="I think, AI builds — the announcement" data-es="Yo pienso, la IA construye — la declaración" data-zh="我思考，AI完成——开篇宣言">생각은 내가, 완성은 AI가 — 시작 선언</h3>
           <p data-en="Why I restarted this blog after two years, and what's next." data-es="Por qué reinicié este blog tras dos años y qué viene." data-zh="为什么重启停更两年的博客，以及未来计划。">2년 멈췄던 블로그를 다시 켠 이유, 그리고 앞으로의 계획.</p>
@@ -197,19 +235,76 @@ layout: null
   </div>
 </section>
 
+<section id="themes">
+  <div class="wrap">
+    <div class="sec-head"><h2 data-en="🧩 Problem → Solution, theme by theme" data-es="🧩 Problema → Solución, tema a tema" data-zh="🧩 问题 → 解决，逐个主题">🧩 문제 → 해결, 테마별 스토리</h2><a class="more" href="/categories/building/" data-en="All →" data-es="Todo →" data-zh="全部 →">전체 →</a></div>
+    <p class="sec-sub" data-en="Every project starts with a real problem in my life. What it was, how I'm solving it — one theme at a time." data-es="Cada proyecto nace de un problema real de mi vida. Cuál era y cómo lo resuelvo — tema a tema." data-zh="每个项目都源自我生活中的真实问题。是什么问题、如何解决——逐一记录。">모든 프로젝트는 내 삶의 진짜 문제에서 시작됩니다. 어떤 문제였고, 어떻게 풀고 있는지 — 테마별로 남깁니다.</p>
+    <div class="rail">
+      <a class="card" href="/posts/수천-명의-출전표에서-우리-아이-찾기/">
+        <div class="thumb bip">📋<span class="badge live">NEW</span></div>
+        <div class="card-body">
+          <h3 data-en="Finding my kid in a thousand-swimmer psych sheet" data-es="Encontrar a mi hijo entre miles de nadadores" data-zh="在数千人出场表中找到自家孩子">수천 명의 출전표에서 우리 아이 찾기</h3>
+          <p data-en="Why every swim parent holds a highlighter — and the tool that retired mine." data-es="Por qué todo padre nadador lleva un rotulador — y la herramienta que jubiló el mío." data-zh="为什么家长人手一支荧光笔——以及让它退休的工具。">대회장의 형광펜을 은퇴시킨 도구, swim.meets를 만든 이유.</p>
+          <span class="card-date">swim.meets</span>
+        </div>
+      </a>
+      <a class="card" href="/posts/아이의-기록이-인터넷에서-사라지고-있었다/">
+        <div class="thumb swim">🌊<span class="badge live">NEW</span></div>
+        <div class="card-body">
+          <h3 data-en="My kids' records were vanishing from the internet" data-es="Los registros de mis hijos desaparecían de internet" data-zh="孩子的记录正在从网上消失">아이의 기록이 인터넷에서 사라지고 있었다</h3>
+          <p data-en="Links die. A time capsule that outlives them — in two languages." data-es="Los enlaces mueren. Una cápsula del tiempo que los sobrevive — en dos idiomas." data-zh="链接会失效。用双语时间胶囊让记录长存。">링크는 죽는다 — 원본 그대로, 두 언어로 남기는 타임캡슐.</p>
+          <span class="card-date">swim.capsule</span>
+        </div>
+      </a>
+      <a class="card" href="/posts/수영장-가장자리의-스톱워치를-AI-코치로/">
+        <div class="thumb bip">⏱<span class="badge live">NEW</span></div>
+        <div class="card-body">
+          <h3 data-en="Turning the poolside stopwatch into an AI coach" data-es="Del cronómetro de piscina a un coach de IA" data-zh="把泳池边的秒表变成AI教练">수영장 가장자리의 스톱워치를 AI 코치로</h3>
+          <p data-en="Meet results are everywhere; practice data is nowhere. SplitLane fixes that." data-es="Los resultados abundan; los datos de entrenamiento no existen. SplitLane lo arregla." data-zh="比赛成绩到处都有，训练数据却无处可寻。SplitLane来解决。">대회 기록은 넘치는데 연습 데이터는 없다 — SplitLane의 3단계 설계.</p>
+          <span class="card-date">SplitLane</span>
+        </div>
+      </a>
+      <a class="card" href="/posts/여름-리그의-기록은-어디에도-남지-않는다/">
+        <div class="thumb bip">📸<span class="badge live">NEW</span></div>
+        <div class="card-body">
+          <h3 data-en="Summer-league results are recorded nowhere" data-es="Los resultados de la liga de verano no quedan en ningún sitio" data-zh="夏季联赛的成绩无处留存">여름 리그의 기록은 어디에도 남지 않는다</h3>
+          <p data-en="One photo → vision LLM → a lifetime record. And why AI lives in exactly one service." data-es="Una foto → LLM de visión → historial de por vida. Y por qué la IA vive en un solo servicio." data-zh="一张照片→视觉LLM→终身记录簿。以及为何AI只被隔离在一个服务里。">사진 한 장 → AI 추출 → 평생 기록부. AI를 한 서비스에 가둔 이유.</p>
+          <span class="card-date">SwimVault</span>
+        </div>
+      </a>
+      <a class="card" href="/posts/새벽-3시의-6개월-3개-브랜드-계정-통합/">
+        <div class="thumb dev">🌙<span class="badge live">NEW</span></div>
+        <div class="card-body">
+          <h3 data-en="Six months of 3 a.m. — unifying three brands' accounts" data-es="Seis meses de madrugadas — unificar las cuentas de tres marcas" data-zh="凌晨三点的六个月——统一三个品牌的账户">새벽 3시의 6개월 — 3개 브랜드 계정 통합</h3>
+          <p data-en="Effectively solo, a new language, on-prem, a million users. The cost and the lessons." data-es="Prácticamente solo, lenguaje nuevo, on-prem, un millón de usuarios." data-zh="几乎单人、新语言、本地部署、百万用户。代价与收获。">사실상 혼자, 새 언어, 온프레미스, 백만 트래픽 — 그 대가와 배움.</p>
+          <span class="card-date" data-en="Career story" data-es="Historia profesional" data-zh="职业故事">커리어 스토리</span>
+        </div>
+      </a>
+      <a class="card" href="/posts/대회-원정을-여행으로-만드는-법/">
+        <div class="thumb swim">🧳<span class="badge live">NEW</span></div>
+        <div class="card-body">
+          <h3 data-en="Turning away meets into family trips" data-es="Convertir las competiciones fuera en viajes familiares" data-zh="把客场比赛变成家庭旅行">대회 원정을 여행으로 만드는 법</h3>
+          <p data-en="So the kids remember more than the pool ceiling — a 6-year rule." data-es="Para que los niños recuerden algo más que el techo de la piscina — una regla de 6 años." data-zh="别让孩子只记得泳池的天花板——坚持6年的原则。">아이 기억에 수영장 천장만 남지 않도록 — 6년째 지키는 원칙.</p>
+          <span class="card-date" data-en="Swim parent" data-es="Padres de natación" data-zh="游泳家长">수영 부모</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <section id="story">
   <div class="wrap">
     <div class="sec-head"><h2 data-en="💻 Developer story" data-es="💻 Historia del desarrollador" data-zh="💻 开发者故事">💻 개발자 스토리</h2></div>
     <p class="sec-sub" data-en="Working like a startup inside big tech — shipping 0→1 platforms to global production with tiny teams. New episode every Monday." data-es="Trabajar como startup dentro de una gran empresa — plataformas 0→1 hasta producción global con equipos mínimos. Nuevo episodio cada lunes." data-zh="在大企业里像创业公司一样工作——小团队把0→1平台推向全球量产。每周一更新。">대기업 안에서 스타트업처럼 — 소수 인원으로 0→1 플랫폼을 글로벌 양산까지 밀어붙인 이야기. 매주 월요일 공개.</p>
     <div class="rail">
-      <div class="card">
-        <div class="thumb dev"><span class="ep">EP.1</span>✍️<span class="badge soon" data-date="2026-07-27">7/27 공개</span></div>
+      <a class="card" href="/posts/나는-더-이상-글을-직접-쓰지-않는다/">
+        <div class="thumb dev"><span class="ep">EP.1</span>✍️<span class="badge live" data-en="Out early!" data-es="¡Adelantado!" data-zh="提前上线!">미리 공개!</span></div>
         <div class="card-body">
           <h3 data-en="I don't write my own posts anymore" data-es="Ya no escribo mis propios textos" data-zh="我不再亲自写文章了">나는 더 이상 글을 직접 쓰지 않는다</h3>
           <p data-en="How this blog gets made: my thinking, the agent's execution." data-es="Cómo se hace este blog: mi pensamiento, la ejecución del agente." data-zh="这个博客的制作方式：我思考，智能体执行。">생각은 내가, 완성은 에이전트가 — 이 블로그가 만들어지는 방식.</p>
-          <span class="card-date" data-en="2026.07.27 (Mon)" data-es="2026.07.27 (lun)" data-zh="2026.07.27（周一）">2026.07.27 (월)</span>
+          <span class="card-date" data-en="Published · 2026.07.19" data-es="Publicado · 2026.07.19" data-zh="已发布 · 2026.07.19">공개됨 · 2026.07.19</span>
         </div>
-      </div>
+      </a>
       <div class="card">
         <div class="thumb dev"><span class="ep">EP.2</span>🤖<span class="badge soon" data-date="2026-08-10">8/10 공개</span></div>
         <div class="card-body">
@@ -338,31 +433,13 @@ layout: null
 
 <section id="history">
   <div class="wrap">
-    <div class="sec-head"><h2 data-en="🧭 The journey" data-es="🧭 La trayectoria" data-zh="🧭 成长历程">🧭 걸어온 길</h2></div>
-    <p class="sec-sub" data-en="This experiment didn't come out of nowhere — it's 20 years in the making." data-es="Este experimento no salió de la nada — lleva 20 años gestándose." data-zh="这场实验并非一朝一夕——是20年的积累。">이 실험은 하루아침에 나온 게 아닙니다 — 20년의 기록입니다.</p>
-    <div class="two-col">
-      <div>
-        <div class="tl">
-          <div class="tl-item"><time>1990s</time><h3 data-en="Geoje Island: meeting code" data-es="Isla Geoje: conocer el código" data-zh="巨济岛，与编程相遇">거제도, 코딩을 만나다</h3><p data-en="Learned algorithms in elementary school; built the high-school website." data-es="Aprendió algoritmos en primaria; creó la web del instituto." data-zh="小学学习算法，高中搭建学校网站，开启开发者之路。">초등학생 때 알고리즘을 배우고, 고등학교 홈페이지를 만들며 개발자의 길을 시작.</p></div>
-          <div class="tl-item"><time data-en="College–Grad school" data-es="Universidad–Posgrado" data-zh="大学~研究生院">대학 ~ 대학원</time><h3 data-en="Robot soccer, to the world stage" data-es="Fútbol de robots, al escenario mundial" data-zh="机器人足球，走向世界舞台">로봇축구, 세계 무대까지</h3><p data-en="Inspired by a TV drama — from national contests to world-championship podiums." data-es="Inspirado por una serie de TV — de concursos nacionales al podio mundial." data-zh="因电视剧而起，从全国大赛到世界大赛领奖台。">카이스트 드라마를 보고 시작한 로봇축구로 전국대회를 넘어 세계대회 입상.</p></div>
-          <div class="tl-item"><time>2006</time><h3 data-en="20 days alone across America" data-es="20 días solo por EE. UU." data-zh="独自游历美国20天">홀로 떠난 미국 20일</h3><p data-en="No smartphone, no maps — buses, trains and questions. The trip that changed how I see the world." data-es="Sin smartphone ni mapas — autobuses, trenes y preguntas. El viaje que cambió mi mirada." data-zh="没有智能手机和地图，靠问路与公共交通。改变世界观的第一次旅行。">스마트폰도 지도도 없이 대중교통으로 서부를 횡단. 세상을 보는 눈이 바뀐 첫 여행.</p></div>
-          <div class="tl-item"><time>2007 ~ 2016</time><h3 data-en="10 years at Samsung — platform fundamentals" data-es="10 años en Samsung — fundamentos de plataforma" data-zh="三星10年——平台基本功">삼성 10년 — 플랫폼의 기본기</h3><p data-en="Tizen Convergence Platform at SAIT; phones, TVs and appliances shipped end-to-end; papers and patents every year." data-es="Tizen Convergence Platform en SAIT; móviles, TVs y electrodomésticos de punta a punta; papers y patentes cada año." data-zh="在综合技术院开发Tizen融合平台；手机、电视、家电端到端量产；每年发表论文与专利。">소프트웨어멤버십 4년, 종합기술원에서 타이젠 Convergence Platform. 모바일·TV·가전 양산 E2E, 매년 논문·특허.</p></div>
-          <div class="tl-item"><time>2017</time><h3 data-en="To Hyundai — the six-month legend" data-es="A Hyundai — la leyenda de los 6 meses" data-zh="跳槽现代——6个月的传奇">현대차 이직 — 6개월의 전설</h3><p data-en="Effectively a one-man build: three brands' global accounts unified in six months. The 3 a.m. era." data-es="Prácticamente en solitario: cuentas globales de tres marcas unificadas en seis meses. La era de las 3 a. m." data-zh="几乎一人开发，6个月统一三个品牌的全球账户。凌晨三点的岁月。">사실상 1인 개발로 3개 브랜드 글로벌 통합 계정을 6개월 만에 런칭. 새벽 3시 출근의 시절.</p></div>
-          <div class="tl-item"><time>2017 ~ 2018</time><h3 data-en="Connected-car platform: 3 people, 4 countries" data-es="Plataforma de coche conectado: 3 personas, 4 países" data-zh="互联汽车平台：3人4国">커넥티드카 플랫폼, 3명이 4개국</h3><p data-en="From API gateway to app servers — built, launched and operated across Europe, Korea, China and India." data-es="Del API gateway a los servidores de apps — construido, lanzado y operado en Europa, Corea, China e India." data-zh="从API网关到应用服务器，3人完成开发，在欧洲、韩国、中国、印度上线并运营。">API G/W부터 앱 서버까지 3명이 만들어 유럽·한국·중국·인도 런칭과 운영까지.</p></div>
-          <div class="tl-item"><time>~ 2023</time><h3 data-en="Vehicle Twin — linking car and cloud" data-es="Vehicle Twin — unir coche y nube" data-zh="Vehicle Twin——连接汽车与云端">Vehicle Twin — 차와 서버를 잇다</h3><p data-en="A digital twin designed in Silicon Valley, powering remote diagnostics." data-es="Un gemelo digital diseñado en Silicon Valley, base del diagnóstico remoto." data-zh="在硅谷设计的数字孪生，实现远程诊断服务。">실리콘밸리에서 설계한 디지털 트윈으로 원격진단 서비스 실현.</p></div>
-          <div class="tl-item"><time>2024 ~</time><h3 data-en="Expat in the U.S. — data into business" data-es="Expatriado en EE. UU. — datos a negocio" data-zh="驻美——让数据创造业务价值">미국 주재원 — 데이터를 비즈니스로</h3><p data-en="Stabilized Kia's North-American big-data center, cut collection costs, and built a one-app-a-day AI micro-app process." data-es="Estabilizó el centro de big data de Kia en Norteamérica, redujo costes y montó un proceso de micro-apps de IA a app por día." data-zh="稳定起亚北美大数据中心、优化采集成本，建立日均一款AI微应用的流程。">기아 북미 빅데이터센터 정상화, 수집 비용 구조 개선, AI 마이크로앱을 1일 1앱으로 출시하는 프로세스 구축.</p></div>
-        </div>
-      </div>
-      <div>
-        <div class="tl">
-          <div class="tl-item swim"><time data-en="Kindergarten" data-es="Preescolar" data-zh="幼儿园">유치원</time><h3 data-en="First splash" data-es="Primer contacto con el agua" data-zh="初识游泳">수영과의 첫 만남</h3><p data-en="A sports kindergarten instead of an English academy; a local-meet medal within a year." data-es="Un preescolar deportivo en vez de academia de inglés; medalla local en un año." data-zh="选择体育幼儿园而非英语班，一年内在社区比赛获奖。">영어유치원 대신 유아체능단. 1년 만에 동네 대회 입상.</p></div>
-          <div class="tl-item swim"><time data-en="Elementary" data-es="Primaria" data-zh="小学">초등학교</time><h3 data-en="Athlete registration, and a first 9th place" data-es="Registro de atleta, y un primer 9.º puesto" data-zh="注册选手，以及第一次第9名">선수 등록, 그리고 첫 9위</h3><p data-en="Missing the final at the first official meet — where the growth began." data-es="Quedarse fuera de la final en el primer campeonato oficial — ahí empezó el crecimiento." data-zh="首次正式比赛无缘决赛——成长由此开始。">첫 공식 대회 결승 탈락의 속상함이 성장의 시작이 되다.</p></div>
-          <div class="tl-item swim"><time data-en="Korea, 2 years" data-es="Corea, 2 años" data-zh="韩国2年">한국 2년</time><h3 data-en="National medals — both kids" data-es="Medallas nacionales — los dos" data-zh="全国奖牌，两个孩子都有">전국 메달, 두 아이 모두</h3><p data-en="Butterfly bronze nationally; provincial-team honors. Every away meet became a family trip worth remembering." data-es="Bronce nacional en mariposa; selección provincial. Cada viaje a competir se volvió un viaje familiar memorable." data-zh="蝶泳全国季军、道代表队入选。每次远征比赛都变成值得铭记的家庭旅行。">아들은 접영 전국 3위, 딸은 생활체육 경기도대표. 대회 원정마다 지역의 맛과 경험을 선물로.</p></div>
-          <div class="tl-item swim"><time data-en="U.S., 2 years" data-es="EE. UU., 2 años" data-zh="美国2年">미국 2년</time><h3 data-en="Top-8 in the U.S." data-es="Top-8 en EE. UU." data-zh="全美第8名">미국 전국 8위</h3><p data-en="Adapting to a whole new training culture — and medaling in both countries." data-es="Adaptarse a una cultura de entrenamiento nueva — y medallas en ambos países." data-zh="适应全新的训练文化，成长为两国奖牌选手。">완전히 다른 훈련 문화에 적응하며 양국 메달리스트로 성장.</p></div>
-          <div class="tl-item swim"><time>2026 ~</time><h3 data-en="Turning records into assets" data-es="De registros a patrimonio" data-zh="把记录变成资产">기록을 자산으로</h3><p data-en="All of it becomes content and apps — and someday, the kids' own personal brands." data-es="Todo se convierte en contenido y apps — y algún día, en la marca personal de los chicos." data-zh="这一切都将成为内容与应用——乃至孩子们未来的个人品牌资产。">이 모든 경험을 콘텐츠와 앱으로 — 아이들의 미래 퍼스널 브랜딩 자산까지.</p></div>
-        </div>
-      </div>
+    <div class="sec-head"><h2 data-en="🧭 Explore me — a mind map" data-es="🧭 Explórame — un mapa mental" data-zh="🧭 探索地图——思维导图">🧭 탐구 지도 — 나를 중심으로 연결된 이야기</h2></div>
+    <p class="sec-sub" data-en="Not a list — a map. Click any node to open its story, then follow the connections. Everything links back to one person." data-es="No es una lista, es un mapa. Toca un nodo para abrir su historia y sigue las conexiones." data-zh="不是列表，而是一张地图。点击节点打开故事，再沿着连接继续探索。">리스트가 아니라 지도입니다. 노드를 누르면 이야기가 열리고, 연결을 따라가면 다음 이야기가 나옵니다. 모든 것은 한 사람으로 이어집니다.</p>
+    <div class="mm-wrap" id="mmWrap">
+      <svg class="mm-svg" id="mmSvg"></svg>
     </div>
+    <div class="mm-clusters" id="mmClusters"></div>
+    <div class="mm-panel" id="mmPanel"></div>
   </div>
 </section>
 
@@ -430,6 +507,7 @@ layout: null
       });
       try { localStorage.setItem('lang', l); } catch(e) {}
       applyBadges(l);
+      document.dispatchEvent(new CustomEvent('langchange', { detail: l }));
     }
 
     // 공개 예정 배지: 30일 이내면 D-day 표시
@@ -481,6 +559,291 @@ layout: null
     }
     checkVersion();
     document.addEventListener('visibilitychange', function(){ if (!document.hidden) checkVersion(); });
+  })();
+</script>
+<script>
+  // ===== 탐구 지도 (mind map explorer) =====
+  (function(){
+    var GROUPS = {
+      dev:     { label:{ko:'💻 개발자 20년', en:'💻 20 yrs of engineering', es:'💻 20 años de ingeniería', zh:'💻 开发者20年'} },
+      swim:    { label:{ko:'🏊 수영 가족', en:'🏊 Swim family', es:'🏊 Familia nadadora', zh:'🏊 游泳家庭'} },
+      build:   { label:{ko:'🤖 AI 빌더', en:'🤖 AI builder', es:'🤖 Constructor con IA', zh:'🤖 AI建造者'} },
+      startup: { label:{ko:'🚀 1인 스타트업', en:'🚀 Solo startup', es:'🚀 Startup en solitario', zh:'🚀 一人创业'} }
+    };
+    var N = [
+      { id:'me', group:'center',
+        label:{ko:'김용진', en:'Yongjin Kim', es:'Yongjin Kim', zh:'金容珍'},
+        hook:{ko:'생각은 내가, 완성은 AI가', en:'I think. AI builds.'},
+        story:{ko:'거제도에서 코딩을 만난 소년이 삼성·현대차·기아에서 20년간 플랫폼을 만들었고, 지금은 미국에서 수영 선수 두 아이를 키우며 AI 에이전트와 함께 1인 스타트업을 실험합니다. 네 방향 중 궁금한 쪽부터 눌러보세요 — 모든 이야기는 서로 연결되어 있습니다.',
+               en:'A boy from Geoje Island who met code early, spent 20 years building platforms at Samsung, Hyundai and Kia, and now raises two competitive swimmers in the U.S. while running a solo-startup experiment with AI agents. Pick any direction — every story connects.'},
+        links:[{t:{ko:'3분 소개 (About)', en:'3-min intro (About)'}, href:'/about/'}],
+        connects:['hub-dev','hub-swim','hub-build','hub-startup'] },
+
+      { id:'hub-dev', group:'dev', hub:true, label:GROUPS.dev.label,
+        hook:{ko:'대기업 안에서 스타트업처럼 일한 20년', en:'20 years of working like a startup inside big tech'},
+        story:{ko:'삼성 10년, 현대차·기아 10년. 늘 소수 인원으로 0→1 플랫폼을 만들어 글로벌 양산까지 밀어붙였습니다. 각 노드가 한 챕터입니다 — 시간순으로 따라가도 좋고, 제목이 궁금한 것부터 열어도 됩니다.',
+               en:'Ten years at Samsung, ten at Hyundai/Kia — always shipping 0→1 platforms to global production with tiny teams. Each node is a chapter.'},
+        links:[], connects:['robot','samsung','hyundai','ccs','twin','kia'] },
+      { id:'robot', group:'dev',
+        label:{ko:'로봇축구 소년', en:'Robot-soccer kid', es:'Niño del fútbol robótico', zh:'机器人足球少年'},
+        hook:{ko:'드라마 한 편이 인생을 바꿀 수 있을까?', en:'Can one TV drama change a life?'},
+        story:{ko:'한국에서 두 번째로 큰 섬 거제도에서 초등학생 때 알고리즘을 배웠고, 고등학교 홈페이지를 만들었습니다. 그러다 카이스트 드라마를 보고 로봇축구에 빠져 대학 1학년부터 대학원까지 — 전국대회를 넘어 세계대회 입상까지 갔습니다. 이 실험 정신이 20년 커리어의 뿌리입니다.',
+               en:'Learned algorithms in elementary school on Geoje Island, built the high-school website, then fell for robot soccer after watching a TV drama about KAIST — riding it from freshman year to grad school, all the way to world-championship podiums.'},
+        links:[{t:{ko:'EP.2로 자세히 (8/10 공개)', en:'Full story in EP.2 (Aug 10)'}, href:'#story'}], connects:['samsung'] },
+      { id:'samsung', group:'dev',
+        label:{ko:'삼성 10년', en:'Samsung, 10 yrs', es:'Samsung, 10 años', zh:'三星10年'},
+        hook:{ko:'냉장고에도 OS가 들어간다는 걸 아는가', en:'Even refrigerators run an OS'},
+        story:{ko:'소프트웨어멤버십 4년을 거쳐 종합기술원에서 RTOS와 타이젠 Convergence Platform을 만들었습니다. 모바일·TV·냉장고 양산을 E2E로 겪으며 매년 논문 발표와 특허 등록을 했고, 오픈소스 커뮤니티 리뷰어로도 활동했습니다. "제품이 고객에게 닿기까지 전부"를 보는 눈이 여기서 생겼습니다.',
+               en:'Four years in Samsung Software Membership, then SAIT: RTOS, the Tizen Convergence Platform, and end-to-end mass production across phones, TVs and appliances — with papers and patents every year.'},
+        links:[], connects:['hyundai','twin'] },
+      { id:'hyundai', group:'dev',
+        label:{ko:'6개월의 전설', en:'The 6-month legend', es:'La leyenda de 6 meses', zh:'6个月的传奇'},
+        hook:{ko:'새벽 3시 출근은 무엇을 남겼나', en:'What did 3 a.m. mornings leave behind?'},
+        story:{ko:'2017년 현대차로 옮겨 받은 첫 과제 — 현대·기아·제네시스 3개 브랜드의 파편화된 계정을 하나로. 새 언어(Go), 온프레미스, 자동차 보안 CI/CD를 사실상 혼자, 6개월 만에, 백만 이상 트래픽으로 전환했습니다. 가장 압축된 성장이었고 가장 지속 불가능한 방식이었습니다.',
+               en:'First mission at Hyundai in 2017: unify three brands’ fragmented accounts. New language (Go), on-prem, automotive-grade CI/CD — effectively solo, in six months, at million-plus traffic.'},
+        links:[{t:{ko:'글로 읽기', en:'Read the post'}, href:'/posts/새벽-3시의-6개월-3개-브랜드-계정-통합/'}], connects:['ccs'] },
+      { id:'ccs', group:'dev',
+        label:{ko:'3명이 4개국', en:'3 people, 4 countries', es:'3 personas, 4 países', zh:'3人4国'},
+        hook:{ko:'백업 플랜은 없었다', en:'There was no plan B'},
+        story:{ko:'API 게이트웨이부터 계정·차량·파트너·앱 서버까지, 단 3명이 커넥티드카 플랫폼을 만들어 유럽→한국→중국→인도에 런칭하고 운영까지 했습니다. 실패하면 차량 출시가 멈추는 상황 — 해킹 뉴스가 나올 때마다 심장이 멎는 듯했지만, 그 긴장이 저를 단단하게 만들었습니다.',
+               en:'Three engineers built a connected-car platform — API gateway to app servers — and launched it across Europe, Korea, China and India, then ran it. If it failed, car launches stopped.'},
+        links:[{t:{ko:'EP.4로 자세히 (9/14 공개)', en:'Full story in EP.4 (Sep 14)'}, href:'#story'}], connects:['twin'] },
+      { id:'twin', group:'dev',
+        label:{ko:'Vehicle Twin', en:'Vehicle Twin', es:'Vehicle Twin', zh:'Vehicle Twin'},
+        hook:{ko:'이름 때문에 공격받은 프로젝트', en:'The project that got attacked for its name'},
+        story:{ko:'차와 서버를 진짜로 연결하려면 디지털 트윈이 필요했습니다. 가족을 한국에 두고 2년에 걸쳐 실리콘밸리 스타트업과 설계했고, 원격진단 서비스로 결실을 맺었습니다. 데이터를 "수집"이 아니라 "활용 가능한 자산"으로 바꾸는 철학 — 이 철학이 훗날 수영 앱 SwimVault로 이어집니다.',
+               en:'Connecting car and cloud for real required a digital twin. Designed with a Silicon Valley startup over two years, it bore fruit as remote diagnostics — and its data philosophy later resurfaced in SwimVault.'},
+        links:[], connects:['kia','vault'] },
+      { id:'kia', group:'dev',
+        label:{ko:'미국, 데이터를 돈으로', en:'US: data into money', es:'EE. UU.: datos a dinero', zh:'美国：数据变现'},
+        hook:{ko:'하루 백만 대가 보내는 데이터, 분석은 0대였다', en:'A million cars sending data daily — zero being analyzed'},
+        story:{ko:'기아 미국 주재원으로 와서 마주한 현실 — 서버 100여 대의 빅데이터센터가 사실상 스토리지로만 쓰이고 있었습니다. 파이프라인을 다시 세우고 수집 비용 구조를 바꾸고, 12V 품질 모니터링 같은 유스케이스를 만들었습니다. 지금은 AI 마이크로앱을 1일 1앱 속도로 출시하는 프로세스를 만들고 있습니다.',
+               en:'As an expat at Kia US: a 100-server big-data center used as mere storage. Rebuilt the pipelines, restructured collection costs, shipped use cases like 12V quality monitoring — now building a one-AI-app-a-day process.'},
+        links:[], connects:['agent'] },
+
+      { id:'hub-swim', group:'swim', hub:true, label:GROUPS.swim.label,
+        hook:{ko:'두 나라에서 선수 두 명을 키운다는 것', en:'Raising two athletes across two countries'},
+        story:{ko:'아들과 딸 모두 한국에서 2년, 미국에서 2년 수영 선수로 성장 중입니다. 두 아이는 완전히 다른 이야기를 갖고 있고, 부모의 역할도 하나의 노드입니다.',
+               en:'Both kids have swum competitively for two years in Korea and two in the U.S. Each child is a different story — and the parent role is a node of its own.'},
+        links:[], connects:['son','daughter','parent','usvskr'] },
+      { id:'son', group:'swim',
+        label:{ko:'아들', en:'Son', es:'Hijo', zh:'儿子'},
+        hook:{ko:'9위로 시작해 두 나라 메달리스트로', en:'From 9th place to medals in two nations'},
+        story:{ko:'첫 공식 대회에서 9위 — 결승에도 못 갔습니다. 그 속상함이 시작이었습니다. 이후 대부분 결승에 오르며 경험을 쌓았고, 주종목(평영)이 아닌 접영으로 전국 3위 첫 메달을 땄습니다. 미국에 와서는 전혀 다른 훈련 문화에 적응하며 전국 8위까지 성장했습니다.',
+               en:'Ninth at his first official meet — didn’t even make the final. That sting was the beginning. His first national medal came in butterfly, his off event; in the U.S. he adapted to a whole new culture and reached a national top-8.'},
+        links:[{t:{ko:'그날의 이야기 (9/21 공개)', en:'That day’s story (Sep 21)'}, href:'#story'}], connects:['meets','capsule','parent'] },
+      { id:'daughter', group:'swim',
+        label:{ko:'딸', en:'Daughter', es:'Hija', zh:'女儿'},
+        hook:{ko:'물이 무서웠던 아이', en:'The girl who was afraid of water'},
+        story:{ko:'수영을 거의 못 하는 수준에서 발차기부터 다시 시작했습니다. 물을 좋아한다는 것 하나로 폼 교정을 견디고 마스터즈반을 거쳐, 생활체육 부문 경기도대표(접영·평영)까지 — 지금은 미국에서 오빠와 함께 성장하고 있습니다. 시작이 늦어도 길은 있다는 증거.',
+               en:'She restarted from kickboard basics, endured stroke correction on pure love of water, and made the Gyeonggi provincial team in fly and breast — now growing alongside her brother in the U.S.'},
+        links:[{t:{ko:'성장기 (8/17 공개)', en:'Her story (Aug 17)'}, href:'#story'}], connects:['capsule','parent'] },
+      { id:'parent', group:'swim',
+        label:{ko:'부모의 역할', en:'The parent role', es:'El rol de padre', zh:'父母的角色'},
+        hook:{ko:'대회 원정을 여행으로 만든 이유', en:'Why every away meet became a trip'},
+        story:{ko:'아이들 기억에 수영장 천장만 남을까 봐, 어느 도시를 가든 그 지역의 먹거리·볼거리를 하나 이상 경험하는 규칙을 만들었습니다. 6년째 — 대회는 "기록 재는 날"이 아니라 "○○ 가는 날"이 되었고, 우리 가족에겐 전국 맛의 지도가 생겼습니다.',
+               en:'Afraid the kids would only remember pool ceilings, we made a rule: every away city, experience at least one local thing. Six years in, meets are trips — and we own a taste-map of two countries.'},
+        links:[{t:{ko:'글로 읽기', en:'Read the post'}, href:'/posts/대회-원정을-여행으로-만드는-법/'}], connects:['son','daughter'] },
+      { id:'usvskr', group:'swim',
+        label:{ko:'한국 vs 미국', en:'Korea vs U.S.', es:'Corea vs EE. UU.', zh:'韩国 vs 美国'},
+        hook:{ko:'같은 수영, 완전히 다른 두 세계', en:'Same sport, two entirely different worlds'},
+        story:{ko:'훈련 방식, 대회 시스템, 코치와 부모의 역할까지 — 두 나라는 같은 종목을 완전히 다르게 운영합니다. 양쪽을 선수 부모로 직접 겪은 한국어 기록은 거의 없습니다. 그래서 제가 씁니다.',
+               en:'Training, meet systems, the roles of coach and parent — the two countries run the same sport completely differently. First-hand Korean-language accounts of both sides barely exist. So I’m writing them.'},
+        links:[{t:{ko:'비교 분석 (9/7 공개)', en:'The comparison (Sep 7)'}, href:'#story'}], connects:['splitlane'] },
+
+      { id:'hub-build', group:'build', hub:true, label:GROUPS.build.label,
+        hook:{ko:'가족의 문제를 앱으로 푼다', en:'Solving my family’s problems with apps'},
+        story:{ko:'수영 가족의 진짜 불편에서 출발한 앱 스택 — 기록 추출(swim.meets) → 보존(swim.capsule) → 통합(SwimVault) → 훈련(SplitLane). 전부 AI 에이전트와 함께, 전부 GitHub 공개로 만듭니다.',
+               en:'An app stack born from real family pain: extract (swim.meets) → preserve (swim.capsule) → unify (SwimVault) → train (SplitLane). All built with AI agents, all open on GitHub.'},
+        links:[{t:{ko:'프로젝트 전체', en:'All projects'}, href:'/projects/'}], connects:['agent','meets','capsule','splitlane','vault'] },
+      { id:'agent', group:'build',
+        label:{ko:'이 사이트도 에이전트가', en:'This site? An agent built it', es:'Este sitio lo hizo un agente', zh:'这个网站也是智能体做的'},
+        hook:{ko:'이 페이지, 사람이 만들지 않았다', en:'This page was not made by hand'},
+        story:{ko:'지금 보고 있는 이 홈페이지, 블로그 글, 발행 시스템 — 전부 Claude Code 에이전트가 만들었습니다. 제 역할은 생각을 입력하는 것(주 30분)과 검수(주 30분)뿐. 2년간 두 편밖에 못 쓰던 블로그가 이 방식으로 일주일 만에 살아났습니다.',
+               en:'This homepage, the posts, the publishing pipeline — all built by a Claude Code agent. My part: 30 minutes of input and 30 minutes of review a week. A blog that managed two posts in two years came alive in a week.'},
+        links:[{t:{ko:'그 이야기 (EP.1)', en:'The story (EP.1)'}, href:'/posts/나는-더-이상-글을-직접-쓰지-않는다/'}], connects:['why'] },
+      { id:'meets', group:'build',
+        label:{ko:'swim.meets', en:'swim.meets', es:'swim.meets', zh:'swim.meets'},
+        hook:{ko:'수천 명 명단에서 우리 아이 찾기', en:'Finding my kid among thousands'},
+        story:{ko:'대회마다 부모들이 형광펜으로 뒤지는 수백 페이지 출전표(psych sheet)에서, 등록해둔 아이의 종목·조·레인·표준기록 통과 여부를 자동 추출하는 도구. 매 대회 실사용 중이고, 대회를 거듭할수록 기록 진척도가 자동으로 쌓입니다.',
+               en:'Pulls a registered swimmer’s events, heats, lanes and time-standard status out of the psych sheets parents dig through with highlighters. Used at every meet.'},
+        links:[{t:{ko:'만든 이유 (글)', en:'Why I built it'}, href:'/posts/수천-명의-출전표에서-우리-아이-찾기/'},{t:{ko:'GitHub', en:'GitHub'}, href:'https://github.com/kyj5482/swim.meets'}], connects:['son','vault'] },
+      { id:'capsule', group:'build',
+        label:{ko:'swim.capsule', en:'swim.capsule', es:'swim.capsule', zh:'swim.capsule'},
+        hook:{ko:'기사는 사라진다, 기록은 남긴다', en:'Articles vanish. Records shouldn’t.'},
+        story:{ko:'아이들의 대회 기록·신문 기사·영상이 링크와 함께 사라지고 있었습니다. 원본 그대로, 한/영 두 언어로 보관하는 타임캡슐 — 훗날 아이들이 자신의 이야기를 스스로 말할 때의 밑천이자, 미국 코치와 대학이 읽을 수 있는 기록입니다.',
+               en:'The kids’ results, articles and videos were dying with their links. A bilingual time capsule that preserves originals — future capital for the kids’ own stories, readable by U.S. coaches and colleges.'},
+        links:[{t:{ko:'만든 이유 (글)', en:'Why I built it'}, href:'/posts/아이의-기록이-인터넷에서-사라지고-있었다/'},{t:{ko:'사이트 보기', en:'Visit the site'}, href:'https://kyj5482.github.io/swim.capsule/'}], connects:['son','daughter'] },
+      { id:'splitlane', group:'build',
+        label:{ko:'SplitLane ⭐', en:'SplitLane ⭐', es:'SplitLane ⭐', zh:'SplitLane ⭐'},
+        hook:{ko:'스톱워치를 AI 코치로 — 출시 1순위', en:'Stopwatch → AI coach. First to ship.'},
+        story:{ko:'대회 기록은 넘치는데 연습 데이터는 어디에도 없습니다. 무료 타이머+기록에서 시작해, 표준기록 대비 달성률과 향상 가속도를 분석하는 AI 코치(구독), 그리고 코치 매칭까지 — 3단계로 성장하는 앱. 2027년 상반기 스토어 출시가 목표이고, 늦어지면 그대로 공개합니다.',
+               en:'Meet results are everywhere; practice data is nowhere. Free timer + records first, then an AI coach analyzing progress vs. time standards, then coach matching. Store launch target: H1 2027 — delays will be published too.'},
+        links:[{t:{ko:'설계 이야기 (글)', en:'The design story'}, href:'/posts/수영장-가장자리의-스톱워치를-AI-코치로/'},{t:{ko:'GitHub', en:'GitHub'}, href:'https://github.com/kyj5482/swim.meet.timer'}], connects:['usvskr'] },
+      { id:'vault', group:'build',
+        label:{ko:'SwimVault', en:'SwimVault', es:'SwimVault', zh:'SwimVault'},
+        hook:{ko:'여름 리그 기록은 어디에도 없다', en:'Summer-league times exist nowhere'},
+        story:{ko:'공식 기록 시스템 바깥의 대회들 — 여름 리그, YMCA, 한국 대회 — 는 종이 한 장으로 끝납니다. 결과지 사진 한 장이면 우리 아이 기록만 추출되어 평생 기록부가 되는 서비스. 차량 데이터를 다루던 Vehicle Twin의 철학이 수영장으로 온 것입니다.',
+               en:'Meets outside the official system — summer leagues, YMCA, Korean meets — end as a sheet of paper. One photo → your kid’s results extracted into a lifetime record. Vehicle Twin’s data philosophy, poolside.'},
+        links:[{t:{ko:'설계 이야기 (글)', en:'The design story'}, href:'/posts/여름-리그의-기록은-어디에도-남지-않는다/'},{t:{ko:'GitHub', en:'GitHub'}, href:'https://github.com/kyj5482/swim.meet.portfolio'}], connects:['twin','meets'] },
+
+      { id:'hub-startup', group:'startup', hub:true, label:GROUPS.startup.label,
+        hook:{ko:'좋아하는 것으로 시작하는 스타트업', en:'A startup that starts from what you love'},
+        story:{ko:'개인 사업의 꿈을 20년 미뤄왔습니다 — 아이들과의 시간이 무엇과도 바꿀 수 없이 좋았으니까. 이제 AI 에이전트 덕분에 둘 다 가능해졌습니다. 2028년까지의 실험, 숫자까지 전부 공개합니다.',
+               en:'I postponed the dream of my own business for 20 years — time with the kids was worth more. AI agents finally made both possible. The experiment runs to 2028, numbers included.'},
+        links:[], connects:['why','newsletter','roadmap2028'] },
+      { id:'why', group:'startup',
+        label:{ko:'왜 지금인가', en:'Why now', es:'Por qué ahora', zh:'为什么是现在'},
+        hook:{ko:'20년을 기다린 타이밍', en:'A timing 20 years in the making'},
+        story:{ko:'과거의 저는 성과를 잠으로 샀습니다 — 새벽 3시 출근으로. 그 방식은 반복할 수 없습니다. AI 에이전트는 처음으로 "잠을 갈아 넣지 않고" 한 사람의 크기를 키우는 도구입니다. Git이, 클라우드가 그랬듯 — 이번 파도는 더 큽니다. 그래서 지금입니다.',
+               en:'I used to buy results with sleep — 3 a.m. mornings. That doesn’t repeat. AI agents are the first tool that scales one person without burning them. Like Git, like cloud — but a bigger wave. That’s why now.'},
+        links:[{t:{ko:'선언문 읽기', en:'Read the announcement'}, href:'/posts/퍼스널-브랜딩을-시작합니다/'}], connects:['agent'] },
+      { id:'newsletter', group:'startup',
+        label:{ko:'뉴스레터', en:'Newsletter', es:'Boletín', zh:'Newsletter'},
+        hook:{ko:'격주에 한 통, 전부 담아서', en:'One email every two weeks, everything inside'},
+        story:{ko:'이 지도의 모든 가지에서 일어나는 일 — 새 글, 앱 진행 상황, 아이들의 성장 — 을 2주에 한 번 메일로 정리해 보냅니다. 광고 없음, 회신하면 제가 직접 읽습니다.',
+               en:'Everything happening across this map — new posts, app progress, the kids’ growth — digested into one email every two weeks. No ads; replies reach me directly.'},
+        links:[{t:{ko:'구독하기', en:'Subscribe'}, href:'https://maily.so/solostartup'}], connects:[] },
+      { id:'roadmap2028', group:'startup',
+        label:{ko:'2028 로드맵', en:'Roadmap to 2028', es:'Hoja de ruta 2028', zh:'2028路线图'},
+        hook:{ko:'실패해도 숫자로 공개한다', en:'Even failure gets published, in numbers'},
+        story:{ko:'매주 글 → 뉴스레터 → 쇼츠 → 앱 출시 → 수익 실험 → 2028년 총결산. 날짜를 미리 박아두고 지키는지 지켜보게 만드는 것 — 그게 이 실험의 규칙입니다.',
+               en:'Weekly posts → newsletter → shorts → app launch → revenue experiments → a full 2028 review. Dates are published in advance; watch whether I keep them. That’s the rule.'},
+        links:[{t:{ko:'일정 보기', en:'See the schedule'}, href:'#roadmap'}], connects:[] }
+    ];
+    var XEDGES = [['twin','vault'],['son','meets'],['daughter','capsule'],['usvskr','splitlane'],['why','agent']];
+
+    var wrap = document.getElementById('mmWrap'), svg = document.getElementById('mmSvg'),
+        panel = document.getElementById('mmPanel'), clusters = document.getElementById('mmClusters');
+    if (!wrap) return;
+    var byId = {}; N.forEach(function(n){ byId[n.id] = n; });
+    var activeId = 'me';
+    function lang(){ try { return localStorage.getItem('lang') || 'ko'; } catch(e){ return 'ko'; } }
+    function T(o){ var l = lang(); return (o && (o[l] || o.en || o.ko)) || ''; }
+    var UI = {
+      links:{ko:'더 보기', en:'Go deeper', es:'Ver más', zh:'查看更多'},
+      connects:{ko:'이어지는 이야기', en:'Connected stories', es:'Historias conectadas', zh:'相关故事'}
+    };
+
+    function layout(){
+      var W = wrap.clientWidth, H = wrap.clientHeight, cx = W/2, cy = H/2;
+      svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+      var pos = { me:[cx, cy] };
+      var hubs = {
+        'hub-dev':    [cx - 0.31*W, cy - 130],
+        'hub-swim':   [cx + 0.31*W, cy - 130],
+        'hub-build':  [cx - 0.31*W, cy + 145],
+        'hub-startup':[cx + 0.31*W, cy + 145]
+      };
+      var fans = {
+        'hub-dev':    { r: 132, a0: 118, a1: 260 },
+        'hub-swim':   { r: 132, a0: -80, a1: 62 },
+        'hub-build':  { r: 138, a0: 96,  a1: 248 },
+        'hub-startup':{ r: 132, a0: -62, a1: 82 }
+      };
+      Object.keys(hubs).forEach(function(h){ pos[h] = hubs[h]; });
+      Object.keys(hubs).forEach(function(h){
+        var kids = byId[h].connects.filter(function(id){ return byId[id] && byId[id].group === byId[h].group && !byId[id].hub; });
+        var f = fans[h], n = kids.length;
+        kids.forEach(function(id, i){
+          var a = (n === 1) ? (f.a0+f.a1)/2 : f.a0 + (f.a1-f.a0) * i/(n-1);
+          var rad = a * Math.PI/180;
+          var x = hubs[h][0] + f.r*Math.cos(rad), y = hubs[h][1] + f.r*Math.sin(rad);
+          pos[id] = [Math.max(70, Math.min(W-70, x)), Math.max(26, Math.min(H-26, y))];
+        });
+      });
+      return pos;
+    }
+
+    function render(){
+      var pos = layout();
+      svg.innerHTML = '';
+      function line(a, b, cls){
+        if (!pos[a] || !pos[b]) return;
+        var el = document.createElementNS('http://www.w3.org/2000/svg','line');
+        el.setAttribute('x1',pos[a][0]); el.setAttribute('y1',pos[a][1]);
+        el.setAttribute('x2',pos[b][0]); el.setAttribute('y2',pos[b][1]);
+        if (cls) el.setAttribute('class',cls);
+        svg.appendChild(el);
+      }
+      ['hub-dev','hub-swim','hub-build','hub-startup'].forEach(function(h){
+        line('me', h);
+        byId[h].connects.forEach(function(id){ if (byId[id] && byId[id].group === byId[h].group) line(h, id); });
+      });
+      XEDGES.forEach(function(e){ line(e[0], e[1], 'x'); });
+      wrap.querySelectorAll('.mm-node').forEach(function(n){ n.remove(); });
+      N.forEach(function(n){
+        if (!pos[n.id]) return;
+        var b = document.createElement('button');
+        b.className = 'mm-node g-' + n.group + (n.hub ? ' hub' : '') + (n.id === 'me' ? ' center' : '') + (n.id === activeId ? ' active' : '');
+        b.style.left = pos[n.id][0] + 'px'; b.style.top = pos[n.id][1] + 'px';
+        b.textContent = T(n.label);
+        b.addEventListener('click', function(){ select(n.id, true); });
+        wrap.appendChild(b);
+      });
+      renderClusters();
+      renderPanel();
+    }
+
+    function renderClusters(){
+      clusters.innerHTML = '';
+      ['dev','swim','build','startup'].forEach(function(g){
+        var d = document.createElement('div'); d.className = 'mm-cluster';
+        var b = document.createElement('b'); b.textContent = T(GROUPS[g].label); d.appendChild(b);
+        var row = document.createElement('div'); row.className = 'row';
+        N.filter(function(n){ return n.group === g && !n.hub; }).forEach(function(n){
+          var c = document.createElement('button'); c.className = 'mm-chip';
+          c.textContent = T(n.label);
+          c.addEventListener('click', function(){ select(n.id, true); });
+          row.appendChild(c);
+        });
+        d.appendChild(row); clusters.appendChild(d);
+      });
+    }
+
+    function renderPanel(){
+      var n = byId[activeId]; if (!n) return;
+      panel.innerHTML = '';
+      var g = document.createElement('div'); g.className = 'mp-group';
+      g.textContent = n.group === 'center' ? 'ABOUT ME' : T(GROUPS[n.group].label);
+      var h = document.createElement('h3'); h.textContent = T(n.label);
+      var hk = document.createElement('div'); hk.className = 'mp-hook'; hk.textContent = '“' + T(n.hook) + '”';
+      var st = document.createElement('p'); st.className = 'mp-story'; st.textContent = T(n.story);
+      panel.appendChild(g); panel.appendChild(h); panel.appendChild(hk); panel.appendChild(st);
+      if (n.links && n.links.length){
+        var lc = document.createElement('div'); lc.className = 'mm-chips';
+        var ll = document.createElement('span'); ll.className = 'lbl'; ll.textContent = T(UI.links); lc.appendChild(ll);
+        n.links.forEach(function(l){
+          var a = document.createElement('a'); a.className = 'mm-chip'; a.href = l.href;
+          if (/^https?:/.test(l.href)) { a.target = '_blank'; a.rel = 'noopener'; }
+          a.textContent = T(l.t) + ' →'; lc.appendChild(a);
+        });
+        panel.appendChild(lc);
+      }
+      var conns = (n.connects || []).filter(function(id){ return byId[id]; });
+      if (conns.length){
+        var cc = document.createElement('div'); cc.className = 'mm-chips';
+        var cl = document.createElement('span'); cl.className = 'lbl'; cl.textContent = T(UI.connects); cc.appendChild(cl);
+        conns.forEach(function(id){
+          var c = document.createElement('button'); c.className = 'mm-chip';
+          c.textContent = T(byId[id].label);
+          c.addEventListener('click', function(){ select(id, true); });
+          cc.appendChild(c);
+        });
+        panel.appendChild(cc);
+      }
+    }
+
+    function select(id, scroll){
+      activeId = id;
+      wrap.querySelectorAll('.mm-node').forEach(function(b){ b.classList.remove('active'); });
+      render();
+      if (scroll && window.innerWidth > 900) panel.scrollIntoView({ behavior:'smooth', block:'nearest' });
+    }
+
+    window.addEventListener('resize', render);
+    document.addEventListener('langchange', render);
+    render();
   })();
 </script>
 </body>
