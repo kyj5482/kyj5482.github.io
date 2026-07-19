@@ -26,3 +26,83 @@ html:not([data-mode]) {
   --tag-hover: #1e3a5f;
   --search-tag-bg: #141b28;
 }
+
+/* ===== 퍼즐 히어로 & 글 구성 요소 ===== */
+.puzzle-hero {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin: 0.6rem 0 1.6rem;
+}
+.puzzle-hero .pz-inner {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #1f2937;
+  background: #0a0e14;
+  transition: box-shadow 0.4s ease;
+}
+.puzzle-hero.mini .pz-inner {
+  position: fixed;
+  inset: auto 18px 18px auto;
+  width: min(230px, 46vw);
+  aspect-ratio: 16 / 9;
+  z-index: 80;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+}
+.puzzle-hero.complete .pz-inner {
+  box-shadow: 0 0 0 2px #38bdf8, 0 12px 32px rgba(56, 189, 248, 0.35);
+}
+.pz-base {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(16px) brightness(0.45) saturate(0.6);
+  transform: scale(1.08);
+}
+.pz-tile {
+  position: absolute;
+  width: 33.4%;
+  height: 33.4%;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+.pz-tile.on { opacity: 1; }
+.pz-badge {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  background: rgba(10, 14, 20, 0.78);
+  color: #e8edf4;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 11px;
+  border-radius: 999px;
+  border: 1px solid #1f2937;
+  backdrop-filter: blur(4px);
+}
+.puzzle-hero.mini .pz-badge { font-size: 0.62rem; padding: 3px 8px; }
+
+.pz-q {
+  border: 1px solid #1e3a5f;
+  border-left: 5px solid #38bdf8;
+  background: rgba(56, 189, 248, 0.07);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 1.2rem 0 1.6rem;
+  font-size: 1.02rem;
+}
+.pz-q b { color: #38bdf8; }
+.pz-q span { display: block; color: #94a3b8; font-size: 0.85rem; margin-top: 6px; }
+
+.takeaway {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1));
+  border: 1px solid #1e3a5f;
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin: 1.8rem 0 1.2rem;
+}
+.takeaway b.tk-title { display: block; color: #38bdf8; font-size: 1.02rem; margin-bottom: 10px; }
+.takeaway ul { margin: 0 0 0 1.1rem; padding: 0; }
+.takeaway li { margin: 6px 0; }
